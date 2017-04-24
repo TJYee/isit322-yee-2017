@@ -1,5 +1,5 @@
 import React from 'react';
-import SmallNumbers from './components/SmallNumbers';
+import SmallNumbers from '../components/SmallNumbers';
 import { shallow } from 'enzyme';
 
 describe('My SmallNumbers test', function() {
@@ -21,8 +21,6 @@ describe('My SmallNumbers test', function() {
     it('renders initial value of paragraph with state.nine', () => {
         const wrapper = shallow(<SmallNumbers />);
         const nineSign = <p className="App-intro">state.nine: 0</p>;
-        getFirst(wrapper);
-        getLast(wrapper);
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
 
