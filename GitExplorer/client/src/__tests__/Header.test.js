@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { shallow } from 'enzyme';
 
-describe('My Header test', function() {
+describe('My Header test suite', function() {
 
     it('expects true to be true', function() {
         expect(true).toBe(true);

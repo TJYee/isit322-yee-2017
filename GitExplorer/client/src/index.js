@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import GetUserInfo from './components/GetUserInfo';
 import Header from './components/Header';
 import SmallNumbers from './components/SmallNumbers';
 import GetFoo from './components/GetFoo';
-import './index.css';
+import './css/index.css';
 
 ReactDOM.render(
     <div>
         <Header />
-        <App />
+        <GetUserInfo />
         <GetFoo />
         <SmallNumbers />
     </div>,

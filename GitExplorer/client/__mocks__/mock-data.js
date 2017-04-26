@@ -11,7 +11,9 @@ const getData = (url) => {
                 error: {},
                 response: {},
                 body: JSON.stringify({
-                    login: 'Robin Dudette'
+                    login: 'Robin Dudette',
+                    followers: '5',
+                    url: 'https://test.test.test'
                 })
             };
 

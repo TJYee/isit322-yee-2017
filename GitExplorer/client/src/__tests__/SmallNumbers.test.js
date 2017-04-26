@@ -2,16 +2,16 @@ import React from 'react';
 import SmallNumbers from '../components/SmallNumbers';
 import { shallow } from 'enzyme';
 
-describe('My SmallNumbers test', function() {
+describe('My SmallNumbers test suite', function() {
 
     const getFirst = (wrapper) => {
-        const ninep = wrapper.find('p').first().debug();
-        console.log(ninep);
+        const numP = wrapper.find('p').first().debug();
+        console.log(numP);
     };
 
     const getLast = (wrapper) => {
-        const ninep = wrapper.find('p').last().debug();
-        console.log(ninep);
+        const numP = wrapper.find('p').last().debug();
+        console.log(numP);
     };
 
     it('expects true to be true', function() {

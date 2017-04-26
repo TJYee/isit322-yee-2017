@@ -2,7 +2,7 @@ import React from 'react';
 import GetFoo from '../components/GetFoo';
 import { shallow } from 'enzyme';
 
-describe('My GetFoo test', function() {
+describe('My GetFoo test suite', function() {
 
     it('expects true to be true', function() {
         expect(true).toBe(true);
