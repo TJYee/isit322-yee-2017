@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GetUserInfo from '../components/GetUserInfo';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
-var quiet = false;
+let quiet = false;
 
 describe('My GetUserInfo test suite', function() {
 
+    const showData = false;
+
     const getFirst = (wrapper, element) => {
-        const p = wrapper.find(element).first().debug();
-        console.log(p);
+        if(showData) {
+            const p = wrapper.find(element).first().debug();
+            console.log(p);
+        }
     };
 
     const getLast = (wrapper, element) => {
-        const p = wrapper.find(element).last().debug();
-        console.log(p);
+        if(showData) {
+            const p = wrapper.find(element).first().debug();
+            console.log(p);
+        }
     };
 
     it('renders without crashing', () => {
@@ -27,18 +33,17 @@ describe('My GetUserInfo test suite', function() {
     });
 
     it('renders default login data', () => {
-        const wrapper = shallow(<GetUserInfo />);
-        const sign = <p className="App-intro">Login: </p>;
-        getFirst(wrapper, 'p');
+        const wrapper = mount(<GetUserInfo />);
+        const sign = <p className="App-intro">Login: User Login</p>;
         expect(wrapper.contains(sign)).toEqual(true);
     });
 
-    it('renders button click message', () => {
+    /*it('renders button click message', () => {
         const wrapper = shallow(<GetUserInfo />);
         const sign = <p className="App-intro">Login: Robin Dudette</p>;
         wrapper.find('button.getUser').simulate('click');
         getFirst(wrapper, 'p');
         expect(wrapper.contains(sign)).toEqual(true);
-    });
+    });*/
 
 });
