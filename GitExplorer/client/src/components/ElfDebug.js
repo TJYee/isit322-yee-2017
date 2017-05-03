@@ -29,7 +29,7 @@ export default class ElfDebug {
 
     getIndex = (wrapper, index) => {
         if (this.showData) {
-            const data = wrapper.find(index).debug();
+            const data = wrapper.find('form').childAt(index).debug();
             console.log(data);
 
         }

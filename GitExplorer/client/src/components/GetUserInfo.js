@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import ShowUserInfo from './ShowUserInfo';
 import fieldDefinitions from './field-definitions';
 import ElfLogger from './elf-logger';
-const logger = new ElfLogger(false);
+const logger = new ElfLogger(true);
 
 class GetUserInfo extends Component {
     constructor() {
@@ -22,28 +22,28 @@ class GetUserInfo extends Component {
     }
 
     /*constructor() {
-        super();
-        this.state = {
-            userData: {
-                login: 'User Login',
-                followers: 'User Follower Count',
-                url: 'User URL',
-                html_url: 'User HTML URL',
-                avatar_url: 'User Avatar URL'
-            }
-        };
-    }*/
+     super();
+     this.state = {
+     userData: {
+     login: 'User Login',
+     followers: 'User Follower Count',
+     url: 'User URL',
+     html_url: 'User HTML URL',
+     avatar_url: 'User Avatar URL'
+     }
+     };
+     }*/
 
     getUser = (event) => {
         const that = this;
         fetch('/api/user')
-            .then(function(response) {
+            .then(function (response) {
                 return response.json();
-            }).then(function(json) {
+            }).then(function (json) {
             logger.log('parsed json', json);
-            var userData = JSON.parse(json.gitUser);
+            var gitUser = JSON.parse(json.body);
             that.setState({
-                gitUser: userData
+                gitUser: gitUser
             });
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER

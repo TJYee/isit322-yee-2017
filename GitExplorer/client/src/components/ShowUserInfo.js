@@ -3,19 +3,19 @@ import '../css/App.css';
 import 'whatwg-fetch';
 import ElfElements from './ElfElements';
 import ElfLogger from './elf-logger';
-const logger = new ElfLogger(false);
+const logger = new ElfLogger(true);
 
 class ShowUserInfo extends Component {
     constructor(props) {
         super(props);
 
         /*const tempGitUser = {};
-        for (let value of fieldDefinitions) {
-            tempGitUser[value.id] = value.sample;
-        }
-        this.state = {
-            gitUser: tempGitUser
-        };*/
+         for (let value of fieldDefinitions) {
+         tempGitUser[value.id] = value.sample;
+         }
+         this.state = {
+         gitUser: tempGitUser
+         };*/
 
         //this.shouldUpdate = true;
         logger.log('ShowUserInfo constructor called.');
@@ -37,11 +37,12 @@ class ShowUserInfo extends Component {
     render() {
 
         return (
-            <form className="Form">{
-                this.props.fields.map((field, index) => {
-                    return this.getForm(field, index)
-                })
-            }
+            <form className="Form">
+                {
+                    this.props.fields.map((field, index) => {
+                        return this.getForm(field, index)
+                    })
+                }
                 <button id="getUser" onClick={this.props.onChange}>Get User</button>
             </form>
         )

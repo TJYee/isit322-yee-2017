@@ -10,27 +10,25 @@ const elfDebug = new ElfDebug(true);
 
 describe('My ShowUserInfo test suite', function () {
 
-    let userData = {};
+    let bodyData = {};
 
-    const beforeEach = () => {
-        userData = {
-            login: 'User Login',
-            followers: 'User Follower Count',
-            url: 'User URL',
-            html_url: 'User HTML URL',
-            avatar_url: 'User Avatar URL'
+    beforeEach(function () {
+        const tempBody = {};
+        for (let value of fieldDefinitions) {
+            tempBody[value.id] = value.sample;
         }
-    };
+        bodyData = tempBody;
+    });
+
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<ShowUserInfo
-                fields={fieldDefinitions}
-                gitUser={userData}
-                onChange={function(){}}
-
-        />,
-            div);
+            fields={fieldDefinitions}
+            gitUser={bodyData}
+            onChange={function () {
+            }}
+        />, div);
     });
 
     it('expects true to be true', function () {
@@ -40,12 +38,13 @@ describe('My ShowUserInfo test suite', function () {
     it('renders default login data', () => {
         const wrapper = mount(<ShowUserInfo
             fields={fieldDefinitions}
-            gitUser={userData}
-            onChange={function(){}}
+            gitUser={bodyData}
+            onChange={function() {}}
         />);
-        const sign = <p className="App-intro">login-unknown</p>;
-        expect(wrapper.contains(sign)).toEqual(true);
+        const sign = <p className="ElfFormParagraph" id='login'>login-unknown</p>;
+        console.log(sign);
         elfDebug.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
     /*it('renders button click message', () => {
