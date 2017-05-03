@@ -2,12 +2,26 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 import ShowUserInfo from './ShowUserInfo';
-const fieldDefinitions = './field-definitions';
-import Debug from './elf-logger';
-const logger = new Debug(false);
+import fieldDefinitions from './field-definitions';
+import ElfLogger from './elf-logger';
+const logger = new ElfLogger(false);
 
 class GetUserInfo extends Component {
     constructor() {
+        super();
+        const tempGitUser = {};
+        for (let value of fieldDefinitions) {
+            tempGitUser[value.id] = value.sample;
+        }
+        this.state = {
+            gitUser: tempGitUser
+        };
+
+        logger.log('GetUserInfo constructor called.')
+        logger.log(fieldDefinitions);
+    }
+
+    /*constructor() {
         super();
         this.state = {
             userData: {
@@ -18,24 +32,24 @@ class GetUserInfo extends Component {
                 avatar_url: 'User Avatar URL'
             }
         };
-    }
+    }*/
 
     getUser = (event) => {
         const that = this;
         fetch('/api/user')
-            .then(function (response) {
+            .then(function(response) {
                 return response.json();
-            }).then(function (json) {
+            }).then(function(json) {
             logger.log('parsed json', json);
-            let body = JSON.parse(json.body);
+            var userData = JSON.parse(json.gitUser);
             that.setState({
-                body: body
+                gitUser: userData
             });
-            //that.setState({});
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER
-            that.debug('parsing failed ', ex);
+            logger.log('parsing failed ', ex);
         });
+        event.preventDefault();
     };
 
     render() {
@@ -43,7 +57,7 @@ class GetUserInfo extends Component {
             <div className="App">
                 <ShowUserInfo
                     fields={fieldDefinitions}
-                    userData={this.state.userData}
+                    gitUser={this.state.gitUser}
                     onChange={this.getUser}
                 />
             </div>

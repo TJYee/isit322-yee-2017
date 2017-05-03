@@ -1,18 +1,10 @@
 import React from 'react';
 import SmallNumbers from '../components/SmallNumbers';
 import { shallow } from 'enzyme';
+import ElfDebug from '../components/ElfDebug';
+const elfDebug = new ElfDebug(true);
 
 describe('My SmallNumbers test suite', function() {
-
-    const getFirst = (wrapper) => {
-        const numP = wrapper.find('p').first().debug();
-        console.log(numP);
-    };
-
-    const getLast = (wrapper) => {
-        const numP = wrapper.find('p').last().debug();
-        console.log(numP);
-    };
 
     it('expects true to be true', function() {
         expect(true).toBe(true);

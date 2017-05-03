@@ -2,20 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ShowUserInfo from '../components/ShowUserInfo';
 import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
+import fieldDefinitions from '../components/field-definitions';
+import ElfDebug from '../components/ElfDebug';
+const elfDebug = new ElfDebug(true);
 
-let quiet = false;
 
 describe('My ShowUserInfo test suite', function () {
-
-    const getFirst = (wrapper, element) => {
-        const p = wrapper.find(element).first().debug();
-        console.log(p);
-    };
-
-    const getLast = (wrapper, element) => {
-        const p = wrapper.find(element).last().debug();
-        console.log(p);
-    };
 
     let userData = {};
 
@@ -32,7 +25,10 @@ describe('My ShowUserInfo test suite', function () {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<ShowUserInfo
-                userData={userData}
+                fields={fieldDefinitions}
+                gitUser={userData}
+                onChange={function(){}}
+
         />,
             div);
     });
@@ -42,11 +38,14 @@ describe('My ShowUserInfo test suite', function () {
     });
 
     it('renders default login data', () => {
-        const wrapper = shallow(<ShowUserInfo
-            userData={userData}
+        const wrapper = mount(<ShowUserInfo
+            fields={fieldDefinitions}
+            gitUser={userData}
+            onChange={function(){}}
         />);
-        const sign = <p className="App-intro">Login: User Login</p>;
+        const sign = <p className="App-intro">login-unknown</p>;
         expect(wrapper.contains(sign)).toEqual(true);
+        elfDebug.getFirst(wrapper, 'p');
     });
 
     /*it('renders button click message', () => {

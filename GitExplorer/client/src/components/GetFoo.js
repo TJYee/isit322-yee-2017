@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
+import ElfLogger from './elf-logger';
+const logger = new ElfLogger(false);
 
 class GetFoo extends Component {
     constructor() {
@@ -9,30 +11,20 @@ class GetFoo extends Component {
             file: 'Get Foo File will be placed here.',
             foo: 'waiting for server',
         };
-
-        // SET quiet TO false TO SEE DEBUG MESSAGES
-        this.quiet = true;
-        this.debug('GetFoo constructor called');
     }
-
-    debug = (message) => {
-        if (!this.quiet) {
-            console.log(message);
-        }
-    };
 
     getFoo = () => {
         const that = this;
         fetch('/api/foo')
             .then(function (response) {
-                that.debug('GETONE-FETCH-ONE');
+                logger.log('GETONE-FETCH-ONE');
                 return response.json();
             }).then(function (json) {
-            that.debug('GETONE-FETCH-TWO');
-            that.debug('parsed json', json);
+            logger.log('GETONE-FETCH-TWO');
+            logger.log('parsed json', json);
             that.setState(foo => (json));
         }).catch(function (ex) {
-            console.log('parsing failed', ex);
+            logger.log('parsing failed', ex);
         });
     };
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import { shallow } from 'enzyme';
+import ElfDebug from '../components/ElfDebug';
+const elfDebug = new ElfDebug(true);
 
 describe('My Header test suite', function() {
 
