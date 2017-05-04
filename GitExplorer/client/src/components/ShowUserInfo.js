@@ -3,7 +3,7 @@ import '../css/App.css';
 import 'whatwg-fetch';
 import ElfElements from './ElfElements';
 import ElfLogger from './elf-logger';
-const logger = new ElfLogger(true);
+const logger = new ElfLogger(false);
 
 class ShowUserInfo extends Component {
     constructor(props) {

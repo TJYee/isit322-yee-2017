@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import ShowUserInfo from './ShowUserInfo';
 import fieldDefinitions from './field-definitions';
 import ElfLogger from './elf-logger';
-const logger = new ElfLogger(true);
+const logger = new ElfLogger(false);
 
 class GetUserInfo extends Component {
     constructor() {
