@@ -9,15 +9,6 @@ class ShowUserInfo extends Component {
     constructor(props) {
         super(props);
 
-        /*const tempGitUser = {};
-         for (let value of fieldDefinitions) {
-         tempGitUser[value.id] = value.sample;
-         }
-         this.state = {
-         gitUser: tempGitUser
-         };*/
-
-        //this.shouldUpdate = true;
         logger.log('ShowUserInfo constructor called.');
         logger.log('ShowUserInfo props.' + JSON.stringify(this.props, null, 4));
     }

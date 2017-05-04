@@ -17,5 +17,20 @@ describe('My GetUserInfo test suite', function () {
         expect(true).toBe(true);
     });
 
+    it('renders default login data', () => {
+        const wrapper = mount(<GetUserInfo />);
+        const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
+        //console.log(sign);
+        elfDebug.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
 
+    it('renders button click message', () => {
+        const wrapper = mount(<GetUserInfo />);
+        const sign = <p className='ElfFormParagraph' id='login'>Robin Dudette</p>;
+        wrapper.find('button#getUser').simulate('click');
+        //console.log(sign);
+        elfDebug.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
 });

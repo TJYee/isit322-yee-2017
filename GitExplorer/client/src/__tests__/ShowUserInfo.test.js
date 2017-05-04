@@ -5,7 +5,7 @@ import {shallow} from 'enzyme';
 import {mount} from 'enzyme';
 import fieldDefinitions from '../components/field-definitions';
 import ElfDebug from '../components/ElfDebug';
-const elfDebug = new ElfDebug(true);
+const elfDebug = new ElfDebug(false);
 
 
 describe('My ShowUserInfo test suite', function () {
@@ -41,18 +41,12 @@ describe('My ShowUserInfo test suite', function () {
             gitUser={bodyData}
             onChange={function() {}}
         />);
-        const sign = <p className="ElfFormParagraph" id='login'>login-unknown</p>;
-        console.log(sign);
+        const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
+        //console.log(sign);
         elfDebug.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    /*it('renders button click message', () => {
-     const wrapper = shallow(<ShowUserInfo />);
-     const sign = <p className="App-intro">Login: Robin Dudette</p>;
-     wrapper.find('button.getUser').simulate('click');
-     getFirst(wrapper, 'p');
-     expect(wrapper.contains(sign)).toEqual(true);
-     });*/
+    /**/
 
 });
