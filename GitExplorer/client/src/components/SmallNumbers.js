@@ -2,20 +2,21 @@ import React, {Component} from 'react';
 import '../css/App.css';
 
 class SmallNumbers extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            nine: '0',
-            eight: '0',
-            seven: '0',
-            six: '0',
-            five: '0',
-            four: '0',
-            three: '0',
-            two: '0',
-            one: '0'
+            nine: props.nine,
+            eight: this.props.eight,
+            seven: this.props.seven,
+            six: this.props.six,
+            five: this.props.five,
+            four: this.props.four,
+            three: this.props.three,
+            two: this.props.two,
+            one: this.props.one
         };
     }
+
     getNine = () => {
         this.setState({nine: '9'});
     };
