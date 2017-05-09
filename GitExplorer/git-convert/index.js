@@ -1,52 +1,43 @@
-var fs = require("fs");
+var fs = require('fs');
 var debug = require('debug')('git-convert');
+
 debug('Debugger is on.');
 
 function readFile(fileName) {
-    return new Promise(function (resolve, reject) {
-        fs.readFile(fileName, (data, err) => {
-            if (err) {
-                reject(err);
-            } else {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, function (err, data) {
+                if (err) {
+                    reject(err);
+                }
                 resolve(data);
             }
-        })
+        )
     });
 }
 
-readFile('./git-user.json').then(function (text) {
-    // CODE OMITTED. This is where you solve the core of the assignment.
+readFile('git-user.json').then(function (text) {
     debug('Promise Resolved');
     debug(text);
-    var json = JSON.parse(text.result);
-    //debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
 
-    for (var property in json) {
+    let json = JSON.parse(text);
+    debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
 
+    let output = [];
+
+    for (let property in json) {
+        if (json.hasOwnProperty(property)) {
+            let object = {};
+            object[property] = json[property];
+            object['label'] = 'user-' + property;
+            object['type'] = 'paragraph';
+            object['sample'] = 'sample';
+            output.push(object);
+        }
     }
 
-
-    /*for (var property in json) {
-     if (json.hasOwnProperty(property)) {
-     // YOUR WORK HERE
-     console.log("it('renders default message for " + property);
-     console.log('\tgetDefault("' + property + '-unkown", ');
-     console.log('});\n');
-
-     var propertyValue = json[property] || '';
-
-     console.log("it('renders default click message for " + property);
-     if(typeof property === 'number') {
-     console.log('\tgetDefaultClick(' + propertyValue );
-     }else {
-     console.log('\tgetDefaultClick(' + propertyValue );
-     }
-     console.log('});\n');
-     }
-     }*/
-    console.log('blah');
+    console.log(output);
 }).catch(
     (reason) => {
-        debug('Rejected for reason: ' + reason);
+        debug('Rejected: ' + reason);
     }
 );
