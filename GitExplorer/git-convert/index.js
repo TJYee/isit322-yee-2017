@@ -27,10 +27,10 @@ readFile('git-user.json').then(function (text) {
     for (let property in json) {
         if (json.hasOwnProperty(property)) {
             let object = {};
-            object[property] = json[property];
+            object['id'] = property;
             object['label'] = 'user-' + property;
             object['type'] = 'paragraph';
-            object['sample'] = 'sample';
+            object['sample'] = json[property];
             output.push(object);
         }
     }

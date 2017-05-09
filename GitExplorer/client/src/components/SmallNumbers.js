@@ -5,15 +5,15 @@ class SmallNumbers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nine: props.nine,
-            eight: this.props.eight,
-            seven: this.props.seven,
-            six: this.props.six,
-            five: this.props.five,
-            four: this.props.four,
-            three: this.props.three,
-            two: this.props.two,
-            one: this.props.one
+            nine: this.props.numbers.nine,
+            eight: this.props.numbers.eight,
+            seven: this.props.numbers.seven,
+            six: this.props.numbers.six,
+            five: this.props.numbers.five,
+            four: this.props.numbers.four,
+            three: this.props.numbers.three,
+            two: this.props.numbers.two,
+            one: this.props.numbers.one
         };
     }
 
