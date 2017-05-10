@@ -21,19 +21,6 @@ class GetUserInfo extends Component {
         logger.log(fieldDefinitions);
     }
 
-    /*constructor() {
-     super();
-     this.state = {
-     userData: {
-     login: 'User Login',
-     followers: 'User Follower Count',
-     url: 'User URL',
-     html_url: 'User HTML URL',
-     avatar_url: 'User Avatar URL'
-     }
-     };
-     }*/
-
     getUser = (event) => {
         const that = this;
         fetch('/api/user')
