@@ -28,9 +28,9 @@ readFile('git-user.json').then(function (text) {
         if (json.hasOwnProperty(property)) {
             let object = {};
             object['id'] = property;
-            object['label'] = 'user-' + property;
+            object['label'] = property + '-Name';
             object['type'] = 'paragraph';
-            object['sample'] = json[property];
+            object['sample'] = property + '-unknown';
             output.push(object);
         }
     }

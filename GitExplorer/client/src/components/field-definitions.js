@@ -3,7 +3,7 @@
  */
 
 /*eslint no-unused-vars: "off" */
-const unknown = 'unknown';
+const unknown = ''-unknown'';
 const PARAGRAPH = 0;
 const TEXT = 1;
 const DEFAULT = PARAGRAPH;
@@ -14,7 +14,7 @@ export default [
         id: 'login',
         label: 'loginName',
         type: types[DEFAULT],
-        sample: 'login-' + unknown
+        sample: 'login' + unknown
     },
     {
         id: 'avatar_url',
