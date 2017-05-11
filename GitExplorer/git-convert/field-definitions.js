@@ -1,4 +1,4 @@
-export default [{
+[{
     id: 'login',
     label: 'login-Name',
     type: 'paragraph',

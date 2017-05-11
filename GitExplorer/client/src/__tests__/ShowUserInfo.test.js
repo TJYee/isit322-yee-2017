@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ShowUserInfo from '../components/ShowUserInfo';
 import {shallow} from 'enzyme';
 import {mount} from 'enzyme';
-import fieldDefinitions from '../components/field-definitions';
+import fieldDefinitions from '../components/backupfield-definitions';
 import ElfDebug from '../components/ElfDebug';
 const elfDebug = new ElfDebug(false);
 

@@ -18,12 +18,12 @@ function readFile(fileName) {
 readFile('git-user.json').then(function (text) {
     debug('Promise Resolved');
     debug(text);
-
+    
     let json = JSON.parse(text);
     debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
-
+    
     let output = [];
-
+    
     for (let property in json) {
         if (json.hasOwnProperty(property)) {
             let object = {};
@@ -34,7 +34,7 @@ readFile('git-user.json').then(function (text) {
             output.push(object);
         }
     }
-
+    
     console.log(output);
 }).catch(
     (reason) => {
