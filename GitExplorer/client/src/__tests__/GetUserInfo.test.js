@@ -5,7 +5,6 @@ import {mount} from 'enzyme';
 import ElfDebug from '../components/ElfDebug';
 const elfDebug = new ElfDebug(false);
 
-
 describe('My GetUserInfo test suite', function () {
 
     it('renders without crashing', () => {
