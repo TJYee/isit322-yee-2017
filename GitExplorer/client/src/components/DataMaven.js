@@ -10,6 +10,11 @@ import numbersInit from './numbers-data';
 import SmallNumbers from './SmallNumbers';
 const logger = new ElfLogger(false);
 
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom'
+
 class DataMaven extends Component {
     constructor() {
         super();
@@ -21,7 +26,7 @@ class DataMaven extends Component {
             gitUser: tempGitUser
         };
         
-        logger.log('GetUserInfo constructor called.')
+        logger.log('GetUserInfo constructor called.');
         logger.log(fieldDefinitions);
     }
     

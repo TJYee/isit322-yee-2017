@@ -3,6 +3,21 @@ var router = express.Router();
 var request = require('request');
 var GitHub = require('github-api');
 
+var getGitHub = function () {
+    let gh;
+    if (true) {
+        gh = new GitHub({
+            token: process.env.TOKEN
+        });
+    } else {
+        gh = new GitHub({
+            username: '',
+            password: ''
+        });
+    }
+    return gh;
+};
+
 /* GET home page. */
 router.get('/foo', function (request, response, next) {
     var message = {'result': 'success', 'foo': 'bar', 'file': 'api.js'};
@@ -29,16 +44,15 @@ router.get('/user', function (req, res, next) {
     });
 });
 
-router.get('/gist-test', function (req, rest, next) {
-    // unauthenticated client
-    const gh = new GitHub();
+router.get('/gist-test', function (request, response) {
+    const gh = getGitHub();
     let gist = gh.getGist(); // not a gist yet
     gist.create({
         public: true,
-        description: 'My first gist',
+        description: 'My third gist',
         files: {
-            "file1.txt": {
-                content: "Aren't gists great!"
+            'file1.txt': {
+                content: 'Gists!'
             }
         }
     }).then(function ({data}) {
@@ -47,14 +61,12 @@ router.get('/gist-test', function (req, rest, next) {
         return gist.read();
     }).then(function ({data}) {
         let retrievedGist = data;
-        // do interesting things
         console.log('Retrieved: ', retrievedGist);
-        console.log('');
-        response.status(500).send('result: ', retrievedGist);
+        response.status(200).send({'result': retrievedGist});
+        // do interesting things
     }).catch(function (err) {
-        console.log('Promise Rejected: ', err);
-        console.log('');
-        response.status(500).send('result: ', err);
+        console.log('Rejected: ', err);
+        response.status(500).send({'result': err});
     });
 });
 
