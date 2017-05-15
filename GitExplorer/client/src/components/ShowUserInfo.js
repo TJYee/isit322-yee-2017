@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "../css/App.css";
-import "whatwg-fetch";
 import ElfElements from "./ElfElements";
 import ElfLogger from "./elf-logger";
 const logger = new ElfLogger(false);
@@ -8,9 +7,11 @@ const logger = new ElfLogger(false);
 class ShowUserInfo extends Component {
     constructor(props) {
         super(props);
-        
         logger.log('ShowUserInfo constructor called.');
-        logger.log('ShowUserInfo props.' + JSON.stringify(this.props, null, 4));
+        
+        if (!this.props.gitUser) {
+            throw new Error("No user data.");
+        }
     }
     
     getForm = (field, index) => {

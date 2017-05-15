@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import fieldDefinitions from './field-definitions';
 import ElfHeader from './ElfHeader';
 import ElfLogger from './elf-logger';
-import GetUserInfo from './GetUserInfo';
+import ShowUserInfo from './ShowUserInfo';
 import GetFoo from './GetFoo';
 import numbersInit from './numbers-data';
 import SmallNumbers from './SmallNumbers';
@@ -14,6 +14,7 @@ import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom'
+import ShowNewGist from "./ShowNewGist";
 
 class DataMaven extends Component {
     constructor() {
@@ -23,7 +24,11 @@ class DataMaven extends Component {
             tempGitUser[value.id] = value.sample;
         }
         this.state = {
-            gitUser: tempGitUser
+            gitUser: tempGitUser,
+            gitGist: {
+                created_at: 'Created At',
+                url: 'URL'
+            }
         };
         
         logger.log('GetUserInfo constructor called.');
@@ -50,14 +55,13 @@ class DataMaven extends Component {
     
     fetchGist = (event) => {
         const that = this;
-        fetch('/api/user')
+        fetch('/api/gist-test')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
             logger.log('parsed json', json);
-            var gitUser = JSON.parse(json.body);
             that.setState({
-                gitUser: gitUser
+                gitGist: json.result
             });
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER
@@ -70,15 +74,23 @@ class DataMaven extends Component {
         return (
             <Router>
                 <div className='App'>
-                    <ElfHeader />
-                    <Route exact path='/' component={GetUserInfo}/>
-                    <Route exact path='/get-foo' component={GetFoo}/>
-                    <Route path='/get-numbers'
-                           render={(props) => (
-                               <SmallNumbers {...props}
-                                             numbers={numbersInit}/>
-                           )}
-                    />
+                    <ElfHeader/>
+                    <Route exact path='/' render={(props) => (
+                        <ShowUserInfo {...props}
+                                      gitUser={this.state.gitUser}
+                                      fields={fieldDefinitions}
+                                      onChange={this.fetchUser}/>
+                    )}/>
+                    <Route path='/get-foo' component={GetFoo}/>
+                    <Route path='/get-numbers' render={(props) => (
+                        <SmallNumbers {...props}
+                                      numbers={numbersInit}/>
+                    )}/>
+                    <Route path='/get-gist' render={(props) => (
+                        <ShowNewGist {...props}
+                                        gitGist={this.state.gitGist}
+                                        onChange={this.fetchGist}/>
+                    )}/>
                 </div>
             </Router>
         );
