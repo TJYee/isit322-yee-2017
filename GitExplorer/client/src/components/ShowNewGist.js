@@ -34,7 +34,7 @@ class ShowNewGist extends Component {
                     url: <a href={this.props.gitGist.url}>{this.props.gitGist.url}</a>
                 </p>
                 
-                <button id="getGist" onClick={this.props.onChange}>Get Gist</button>
+                <button id='getGist' onClick={this.props.onChange}>Get Gist</button>
                 <h6>Do not click on hyperlinks before button click returns data</h6>
             </div>
         )
