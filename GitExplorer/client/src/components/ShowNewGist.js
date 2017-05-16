@@ -14,11 +14,28 @@ class ShowNewGist extends Component {
     }
     
     render() {
-        
         return (
             <div className="App">
-                <p>{JSON.stringify(this.props.gitGist, null, 4)}</p>
+                <h2>Insert New Gist</h2>
+                
+                <p className='App-intro'>
+                    created_at: {this.props.gitGist.created_at}
+                </p>
+                <p className='App-intro'>
+                    description: {this.props.gitGist.description}
+                </p>
+                <p className='App-intro'>
+                    html_url: <a href={this.props.gitGist.html_url}>{this.props.gitGist.html_url}</a>
+                </p>
+                <p className='App-intro'>
+                    updated_at: {this.props.gitGist.updated_at}
+                </p>
+                <p className='App-intro'>
+                    url: <a href={this.props.gitGist.url}>{this.props.gitGist.url}</a>
+                </p>
+                
                 <button id="getGist" onClick={this.props.onChange}>Get Gist</button>
+                <h6>Do not click on hyperlinks before button click returns data</h6>
             </div>
         )
     }

@@ -27,6 +27,9 @@ class DataMaven extends Component {
             gitUser: tempGitUser,
             gitGist: {
                 created_at: 'Created At',
+                description: 'Description',
+                html_url: 'HTML URL',
+                updated_at: 'Updated At',
                 url: 'URL'
             }
         };

@@ -31,6 +31,7 @@ class GetFoo extends Component {
     render() {
         return (
             <div className="App">
+                <h2>GetFoo</h2>
                 <p className='App-intro'>
                     state.foo: {this.state.foo}
                 </p>

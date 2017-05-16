@@ -49,10 +49,10 @@ router.get('/gist-test', function (request, response) {
     let gist = gh.getGist(); // not a gist yet
     gist.create({
         public: true,
-        description: 'My third gist',
+        description: 'My created gist',
         files: {
-            'file1.txt': {
-                content: 'Gists!'
+            'GistExplorerGist.txt': {
+                content: 'Gist of Gists!'
             }
         }
     }).then(function ({data}) {

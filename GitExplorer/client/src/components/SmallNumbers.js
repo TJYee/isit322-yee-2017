@@ -56,6 +56,7 @@ class SmallNumbers extends Component {
     render() {
         return (
             <div className="App">
+                <h2>Small Numbers</h2>
                 <p className="App-intro">
                     state.nine: {this.state.nine}
                 </p>

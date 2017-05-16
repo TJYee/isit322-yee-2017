@@ -17,7 +17,7 @@ class ElfHeader extends Component {
                 
                 <div className='App-header'>
                     <img src={logo} className='App-logo' alt='logo'/>
-                    <h2>Welcome to React</h2>
+                    <h2>Git Explorer</h2>
                 </div>
             </div>
         );
