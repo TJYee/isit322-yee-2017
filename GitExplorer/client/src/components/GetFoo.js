@@ -15,7 +15,7 @@ class GetFoo extends Component {
 
     getFoo = () => {
         const that = this;
-        fetch('/api/foo')
+        fetch('/gitapi/foo')
             .then(function (response) {
                 logger.log('GETONE-FETCH-ONE');
                 return response.json();

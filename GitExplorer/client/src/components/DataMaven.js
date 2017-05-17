@@ -34,13 +34,13 @@ class DataMaven extends Component {
             }
         };
         
-        logger.log('GetUserInfo constructor called.');
+        logger.log('DataMaven constructor called.');
         logger.log(fieldDefinitions);
     }
     
     fetchUser = (event) => {
         const that = this;
-        fetch('/api/user')
+        fetch('/gitap/user')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -58,7 +58,7 @@ class DataMaven extends Component {
     
     fetchGist = (event) => {
         const that = this;
-        fetch('/api/gist-test')
+        fetch('/gitapi/gist-test')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
