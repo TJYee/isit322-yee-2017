@@ -18,13 +18,15 @@ var getGitHub = function () {
 };
 router.get('/', function (request, response) {
     let gh = getGitHub();
-    const me = gh.getUser('TJYee');
+    const me = gh.getUser();
     me.listGists()
         .then(function ({gistList}) {
             console.log('USER PROMISE', gistList);
             const results = gistList.map((gist) => {
                 return {
-                    gist
+                    description: gist.description,
+                    html_url: gist.html_url,
+                    url: gist.url
                 }
             });
             response.status(200).send({
