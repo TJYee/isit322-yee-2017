@@ -18,22 +18,20 @@ var getGitHub = function () {
 };
 router.get('/', function (request, response) {
     let gh = getGitHub();
-    const me = gh.getUser();
-    me.listGists(
-    ).then(function ({gistList}) {
-        console.log('USER PROMISE', gistList);
-        const results = gistList.map((gist) => {
-            return {
-                descritpion: gist.description,
-                html_url: gist.html_url,
-                url: gist.url
-            }
-        });
-        response.status(200).send({
-            'count': results.length,
-            'result': results
-        });
-    }).catch(function (err) {
+    const me = gh.getUser('TJYee');
+    me.listGists()
+        .then(function ({gistList}) {
+            console.log('USER PROMISE', gistList);
+            const results = gistList.map((gist) => {
+                return {
+                    gist
+                }
+            });
+            response.status(200).send({
+                'count': results.length,
+                'result': results
+            });
+        }).catch(function (err) {
         console.log('USER Promise Rejected', err);
         response.status(500).send({'result': err});
     });

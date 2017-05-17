@@ -13,6 +13,7 @@ class ElfHeader extends Component {
                     <li><Link to='/get-foo'>Foo</Link></li>
                     <li><Link to='/get-numbers'>Numbers</Link></li>
                     <li><Link to='/get-gist'>Insert New Gist</Link></li>
+                    <li><Link to='/get-list'>Gist Lister</Link></li>
                 </ul>
                 
                 <div className='App-header'>

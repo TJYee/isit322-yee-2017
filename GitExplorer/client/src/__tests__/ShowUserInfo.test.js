@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ShowUserInfo from '../components/ShowUserInfo';
-import {mount} from 'enzyme';
-import fieldDefinitions from '../components/backupfield-definitions';
-import ElfDebug from '../components/ElfDebug';
+import React from "react";
+import ReactDOM from "react-dom";
+import ShowUserInfo from "../components/ShowUserInfo";
+import {mount} from "enzyme";
+import fieldDefinitions from "../components/backupfield-definitions";
+import ElfDebug from "../components/ElfDebug";
 const elfDebug = new ElfDebug(false);
 
 
@@ -55,11 +55,12 @@ describe('My ShowUserInfo test suite', function () {
             clicked = true;
         };
         
-        const wrapper = shallow(<ShowNewGist
-            gitGist={bodyData}
+        const wrapper = mount(<ShowUserInfo
+            fields={fieldDefinitions}
+            gitUser={bodyData}
             onChange={callback}
         />);
-        wrapper.find('button#getGist').simulate('click');
+        wrapper.find('button#getUser').simulate('click');
         expect(clicked).toEqual(true);
     });
     

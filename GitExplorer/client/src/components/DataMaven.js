@@ -7,14 +7,17 @@ import ElfLogger from './elf-logger';
 import ShowUserInfo from './ShowUserInfo';
 import GetFoo from './GetFoo';
 import numbersInit from './numbers-data';
-import SmallNumbers from './SmallNumbers';
-const logger = new ElfLogger(false);
-
+import ShowNewGist from './ShowNewGist';
+import GistLister from './GistLister';
 import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom'
-import ShowNewGist from "./ShowNewGist";
+
+import SmallNumbers from './SmallNumbers';
+const logger = new ElfLogger(false);
+
+
 
 class DataMaven extends Component {
     constructor() {
@@ -94,6 +97,7 @@ class DataMaven extends Component {
                                         gitGist={this.state.gitGist}
                                         onChange={this.fetchGist}/>
                     )}/>
+                    <Route path='/get-list' component={GistLister}/>
                 </div>
             </Router>
         );
