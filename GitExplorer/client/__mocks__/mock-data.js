@@ -15,17 +15,22 @@ const getData = (url) => {
                     url: 'https://test.test.test'
                 })
             };
-        case '/gitapi/gist-test':
+        case '/gitapi/get-basic-list':
             return {
-                error: {},
-                response: {},
-                result: JSON.stringify({
-                    created_at: 'now',
-                    description: 'mock',
-                    html_url: 'mock.site',
-                    updated_at: 'now2',
-                    url: 'mock.site2'
-                })
+                result: [
+                    {
+                        html_url: 'https://gist.github.com/a023c7db77926ff58d35087821e12020',
+                        id: 'a023c7db77926ff58d35087821e12020',
+                        git_pull_url: 'https://gist.github.com/a023c7db77926ff58d35087821e12020.git',
+                        description: 'Simple React Component'
+                    },
+                    {
+                        html_url: 'https://gist.github.com/17f8ec886c1ae22f66501fc3cbe760ac',
+                        id: '17f8ec886c1ae22f66501fc3cbe760ac',
+                        git_pull_url: 'https://gist.github.com/17f8ec886c1ae22f66501fc3cbe760ac.git',
+                        description: 'React Npm Install'
+                    }
+                ]
             };
         default:
             return {};
