@@ -1,6 +1,8 @@
 let express = require('express');
 let router = express.Router();
 var GitHub = require('github-api');
+const Logger = require('../../elf-logger');
+const logger = new Logger('gitapi-gists');
 
 var getGitHub = function () {
     let gh;
@@ -34,11 +36,11 @@ router.get('/', function (request, response) {
         return gist.read();
     }).then(function ({data}) {
         let retrievedGist = data;
-        console.log('Retrieved: ', retrievedGist);
+        logger.log('Retrieved: ', retrievedGist);
         response.status(200).send({'result': retrievedGist});
         // do interesting things
     }).catch(function (err) {
-        console.log('Rejected: ', err);
+        logger.log('Rejected: ', err);
         response.status(500).send({'result': err});
     });
 });

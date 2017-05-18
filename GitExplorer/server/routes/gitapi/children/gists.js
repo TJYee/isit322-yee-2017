@@ -1,7 +1,8 @@
 let express = require('express');
 let router = express.Router();
 var GitHub = require('github-api');
-
+const Logger = require('../../elf-logger');
+const logger = new Logger('gitapi-gists');
 
 var getGitHub = function () {
     let gh;
@@ -22,11 +23,13 @@ router.get('/', function (request, response) {
     const me = gh.getUser();
     me.listGists()
         .then(function ({data}) {
-            console.log('USER PROMISE', data);
+            logger.log('USER PROMISE', data);
             const results = data.map((gist) => {
                 return {
                     description: gist.description,
+                    git_pull_url: gist.git_pull_url,
                     html_url: gist.html_url,
+                    id: gist.id,
                     url: gist.url
                 }
             });
@@ -35,7 +38,7 @@ router.get('/', function (request, response) {
                 'result': results
             });
         }).catch(function (err) {
-        console.log('USER Promise Rejected', err);
+        logger.log('USER Promise Rejected', err);
         response.status(500).send({'result': err});
     });
 });

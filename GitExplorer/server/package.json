@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "karma start",
+    "test-karma": "karma start",
+    "test": "REACT_APP_ELF_LOGGER='gitapi-gists' nodemon jasmine-runner.js",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
