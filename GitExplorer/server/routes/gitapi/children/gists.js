@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 var GitHub = require('github-api');
 
+
 var getGitHub = function () {
     let gh;
     if (true) {
@@ -20,9 +21,9 @@ router.get('/', function (request, response) {
     let gh = getGitHub();
     const me = gh.getUser();
     me.listGists()
-        .then(function ({gistList}) {
-            console.log('USER PROMISE', gistList);
-            const results = gistList.map((gist) => {
+        .then(function ({data}) {
+            console.log('USER PROMISE', data);
+            const results = data.map((gist) => {
                 return {
                     description: gist.description,
                     html_url: gist.html_url,
