@@ -2,8 +2,8 @@ import React from 'react';
 import SmallNumbers from '../components/SmallNumbers';
 import numbersInit from '../components/numbers-data';
 import { shallow } from 'enzyme';
-import ElfDebug from '../components/ElfDebug';
-const elfDebug = new ElfDebug(true);
+import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'SmallNumbers.test.js');
 
 describe('My SmallNumbers test suite', function() {
 

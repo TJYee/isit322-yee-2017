@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ShowUserInfo from "../components/ShowUserInfo";
-import {mount} from "enzyme";
-import fieldDefinitions from "../components/backupfield-definitions";
-import ElfDebug from "../components/ElfDebug";
-const elfDebug = new ElfDebug(false);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ShowUserInfo from '../components/ShowUserInfo';
+import {mount} from 'enzyme';
+import fieldDefinitions from '../components/backupfield-definitions';
+import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
 
 
 describe('My ShowUserInfo test suite', function () {
@@ -43,7 +43,7 @@ describe('My ShowUserInfo test suite', function () {
         />);
         const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
         //console.log(sign);
-        elfDebug.getFirst(wrapper, 'p');
+        elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     

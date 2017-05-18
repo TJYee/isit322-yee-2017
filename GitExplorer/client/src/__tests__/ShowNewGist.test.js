@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ShowNewGist from "../components/ShowNewGist";
-import {shallow} from "enzyme";
-import ElfDebug from "../components/ElfDebug";
-const elfDebug = new ElfDebug(false);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ShowNewGist from '../components/ShowNewGist';
+import {shallow} from 'enzyme';
+import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowNewGist.test.js');
 
 describe('My ShowNewGist test suite', function () {
     
@@ -32,7 +32,7 @@ describe('My ShowNewGist test suite', function () {
         />);
         const sign = <p className='App-intro'>created_at: testTime</p>;
         //console.log(sign);
-        elfDebug.getFirst(wrapper, 'p');
+        elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     

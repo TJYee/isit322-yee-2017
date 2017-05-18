@@ -1,8 +1,8 @@
 import React from 'react';
 import GetFoo from '../components/GetFoo';
 import { shallow } from 'enzyme';
-import ElfDebug from '../components/ElfDebug';
-const elfDebug = new ElfDebug(false);
+import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GetFoo.test.js');
 
 describe('My GetFoo test suite', function() {
 

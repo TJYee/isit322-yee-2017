@@ -1,8 +1,8 @@
 import React from 'react';
 import ElfHeader from '../components/ElfHeader';
 import { shallow } from 'enzyme';
-import ElfDebug from '../components/ElfDebug';
-const elfDebug = new ElfDebug(true);
+import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ElfHeader.test.js');
 
 describe('My Header test suite', function() {
 
