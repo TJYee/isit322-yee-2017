@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import GistLister from '../components/GistLister';
 import {shallow} from 'enzyme';
 import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
-const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GistLister.test.js');
+const elfDebugEnzyme = new ElfDebugEnzyme(true, 'GistLister.test.js');
 
 describe('ElfHeader Suite', function () {
     
