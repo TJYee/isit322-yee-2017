@@ -1,6 +1,6 @@
 const getData = (url) => {
     switch (url) {
-        case '/gitapi/foo':
+        case '/foo':
             return {
                 foo: 'bar',
                 file: 'api.js'
@@ -15,7 +15,7 @@ const getData = (url) => {
                     url: 'https://test.test.test'
                 })
             };
-        case '/gitapi/get-basic-list':
+        case '/gitapi/gist/get-basic-list':
             return {
                 result: [
                     {

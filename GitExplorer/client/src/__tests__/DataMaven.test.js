@@ -32,5 +32,4 @@ describe('My DataMaven test suite', function () {
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
-    
 });
