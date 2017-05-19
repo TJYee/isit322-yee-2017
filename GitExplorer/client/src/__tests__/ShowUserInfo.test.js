@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ShowUserInfo from '../components/ShowUserInfo';
+import ShowUserInfo from '../components/Git/ShowUserInfo';
 import {mount} from 'enzyme';
-import fieldDefinitions from '../components/backupfield-definitions';
-import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+import fieldDefinitions from '../components/Init/backupfield-definitions';
+import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
 
 

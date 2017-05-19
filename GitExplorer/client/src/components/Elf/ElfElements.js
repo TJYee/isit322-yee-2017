@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import '../css/App.css';
-import ElfLogger from './elf-logger';
-const logger = new ElfLogger(false);
+import '../../css/App.css';
+import ElfLogger from '../Debug/elf-logger';
+const logger = new ElfLogger('elements');
 
 
 class ElfElements extends Component {

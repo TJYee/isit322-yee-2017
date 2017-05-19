@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
     res.send('OK');
 });
 
-router.use('/user', require('./children/user'));
-router.use('/gist-test', require('./children/gist-test'));
-router.use('/get-basic-list', require('./children/gists'));
+router.use('/user', require('./user'));
 
 module.exports = router;

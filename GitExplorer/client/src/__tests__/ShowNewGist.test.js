@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ShowNewGist from '../components/ShowNewGist';
+import ShowNewGist from '../components/Git/Gist/ShowNewGist';
 import {shallow} from 'enzyme';
-import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowNewGist.test.js');
 
 describe('My ShowNewGist test suite', function () {

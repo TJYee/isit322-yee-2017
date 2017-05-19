@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import ElfLogger from './elf-logger';
-const logger = new ElfLogger(false);
+import ElfLogger from './Debug/elf-logger';
+const logger = new ElfLogger('foo');
 
 class GetFoo extends Component {
     constructor() {
@@ -15,7 +15,7 @@ class GetFoo extends Component {
 
     getFoo = () => {
         const that = this;
-        fetch('/gitapi/foo')
+        fetch('/foo')
             .then(function (response) {
                 logger.log('GETONE-FETCH-ONE');
                 return response.json();

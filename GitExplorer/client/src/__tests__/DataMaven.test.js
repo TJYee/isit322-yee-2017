@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DataMaven from '../components/DataMaven';
 import {mount} from 'enzyme';
-import ElfDebugEnzyme from '../components/ElfDebugEnzyme';
+import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'DataMaven.test.js');
 
 

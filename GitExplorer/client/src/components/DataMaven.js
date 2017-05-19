@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import fieldDefinitions from './field-definitions';
-import ElfHeader from './ElfHeader';
-import ElfLogger from './elf-logger';
-import ShowUserInfo from './ShowUserInfo';
+import fieldDefinitions from './Init/field-definitions';
+import ElfHeader from './Header/ElfHeader';
+import ElfLogger from './Debug/elf-logger';
+import ShowUserInfo from './Git/ShowUserInfo';
 import GetFoo from './GetFoo';
-import numbersInit from './numbers-data';
-import ShowNewGist from './ShowNewGist';
-import GistLister from './GistLister';
+import numbersInit from './Init/numbers-data';
+import ShowNewGist from './Git/Gist/ShowNewGist';
+import GistLister from './Git/Gist/GistLister';
 import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom'
 
-import SmallNumbers from './SmallNumbers';
+import SmallNumbers from './Number/SmallNumbers';
 const logger = new ElfLogger('data');
 
 
@@ -43,7 +43,7 @@ class DataMaven extends Component {
     
     fetchUser = (event) => {
         const that = this;
-        fetch('/gitap/user')
+        fetch('/gitapi/user')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -61,7 +61,7 @@ class DataMaven extends Component {
     
     fetchGist = (event) => {
         const that = this;
-        fetch('/gitapi/gist-test')
+        fetch('/gitapi/gist/gist-test')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -78,7 +78,7 @@ class DataMaven extends Component {
     
     fetchGistList = (event) => {
         const that = this;
-        fetch('/gitapi/gist-list')
+        fetch('/gitapi/gist/get-basic-list')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {

@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import "../css/App.css";
-import ElfLogger from "./elf-logger";
+import React, {Component} from 'react';
+import '../../../css/App.css';
+import ElfLogger from '../../Debug/elf-logger';
 const logger = new ElfLogger(false);
 
 class ShowNewGist extends Component {
@@ -9,13 +9,13 @@ class ShowNewGist extends Component {
         logger.log('ShowNewGist constructor called.');
         
         if (!this.props.gitGist) {
-            throw new Error("No gist data.");
+            throw new Error('No gist data.');
         }
     }
     
     render() {
         return (
-            <div className="App">
+            <div className='App'>
                 <h2>Insert New Gist</h2>
                 
                 <p className='App-intro'>

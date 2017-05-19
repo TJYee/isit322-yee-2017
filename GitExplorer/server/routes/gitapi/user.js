@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
-const Logger = require('../../elf-logger');
+let request = require('request');
+const Logger = require('../elf-logger');
 const logger = new Logger('gitapi-user');
 
 router.get('/', function (req, res, next) {
@@ -13,11 +14,11 @@ router.get('/', function (req, res, next) {
     
     request(options, function (error, response, body) {
         // Print the error if one occurred
-        console.log('error:', error);
+        logger.log('error:', error);
         // Print the response status code if a response was received
-        console.log('statusCode:', response && response.statusCode);
+        logger.log('statusCode:', response && response.statusCode);
         // Print the HTML for the Google homepage.
-        console.log('body:', body);
+        logger.log('body:', body);
         res.send({error: error, response: response, body: body});
     });
 });

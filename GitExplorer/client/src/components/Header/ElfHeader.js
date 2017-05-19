@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
 import {Link} from 'react-router-dom';
-import '../css/menu.css';
+import '../../css/menu.css';
 
 class ElfHeader extends Component {
     

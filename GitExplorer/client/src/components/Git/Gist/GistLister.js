@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../css/App.css';
-import ElfLogger from './elf-logger';
+import '../../../css/App.css';
+import ElfLogger from '../../Debug/elf-logger';
 const logger = new ElfLogger('gist-lister');
 
 class GistLister extends Component {
