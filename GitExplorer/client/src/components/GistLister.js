@@ -6,7 +6,7 @@ const logger = new ElfLogger('gist-lister');
 class GistLister extends Component {
     constructor(props) {
         super(props);
-        logger.log('Gist List Constructor');
+        logger.log('GistLister Constructor');
     }
     
     render() {

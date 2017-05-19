@@ -15,7 +15,7 @@ import {
 } from 'react-router-dom'
 
 import SmallNumbers from './SmallNumbers';
-const logger = new ElfLogger(false);
+const logger = new ElfLogger('data');
 
 
 
@@ -76,6 +76,23 @@ class DataMaven extends Component {
         event.preventDefault();
     };
     
+    fetchGistList = (event) => {
+        const that = this;
+        fetch('/gitapi/gist-list')
+            .then(function (response) {
+                return response.json();
+            }).then(function (json) {
+            logger.log('parsed json', json);
+            that.setState({
+                gitGist: json.result
+            });
+        }).catch(function (ex) {
+            // DISPLAY WITH LOGGER
+            logger.log('parsing failed ', ex);
+        });
+        event.preventDefault();
+    };
+    
     render() {
         return (
             <Router>
@@ -97,7 +114,11 @@ class DataMaven extends Component {
                                         gitGist={this.state.gitGist}
                                         onChange={this.fetchGist}/>
                     )}/>
-                    <Route path='/get-list' component={GistLister}/>
+                    <Route path='/get-list' render={(props) => (
+                        <GistLister {...props}
+                                     gitGist={this.state.gitGist}
+                                     onChange={this.fetchGistList}/>
+                    )}/>
                 </div>
             </Router>
         );
