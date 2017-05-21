@@ -1,27 +1,11 @@
 let express = require('express');
 let router = express.Router();
-let GitHub = require('github-api');
+let auth = require('../getGitHub');
 const Logger = require('../../elf-logger');
 const logger = new Logger('gist');
 
-let getGitHub = function () {
-    let gh;
-    if (true) {
-        gh = new GitHub({
-            token: process.env.TOKEN
-        });
-    } else {
-        gh = new GitHub({
-            username: '',
-            password: ''
-        });
-    }
-    return gh;
-};
-
 router.get('/', function (request, response) {
-    const gh = getGitHub();
-    let gist = gh.getGist(); // not a gist yet
+    let gist = auth().getGist(); // not a gist yet
     gist.create({
         public: true,
         description: 'My created gist',
