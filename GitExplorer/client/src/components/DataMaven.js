@@ -17,24 +17,29 @@ import {
 import SmallNumbers from './Number/SmallNumbers';
 const logger = new ElfLogger('data');
 
-
-
 class DataMaven extends Component {
     constructor() {
         super();
         const tempGitUser = {};
+        let tempGitGist = {
+            created_at: 'Created At',
+            description: 'Description',
+            git_pull_url: 'Git Pull URL',
+            html_url: 'HTML URL',
+            id: 'ID',
+            updated_at: 'Updated At',
+            url: 'URL'
+        }
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
+        for (let field of tempGitGist) {
+            tempGitGist[field.id] = field.value;
+        }
+        
         this.state = {
             gitUser: tempGitUser,
-            gitGist: {
-                created_at: 'Created At',
-                description: 'Description',
-                html_url: 'HTML URL',
-                updated_at: 'Updated At',
-                url: 'URL'
-            }
+            gitGist: tempGitGist
         };
         
         logger.log('DataMaven constructor called.');
@@ -61,7 +66,7 @@ class DataMaven extends Component {
     
     fetchGist = (event) => {
         const that = this;
-        fetch('/gitapi/gist/gist-test')
+        fetch('/gitapi/gist/gist-create')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
