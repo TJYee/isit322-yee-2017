@@ -3,7 +3,7 @@ let getGitHub = function () {
     let gh;
     if (true) {
         gh = new GitHub({
-            token: process.env.TOKEN
+            token: process.env.GHTOKEN
         });
     } else {
         gh = new GitHub({
