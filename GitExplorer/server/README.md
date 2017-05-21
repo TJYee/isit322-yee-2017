@@ -1,2 +1,3 @@
 # server
-by Charlie Calvert
+Environment variables needed:
+GHTOKEN - GitHub API Authentication Token
