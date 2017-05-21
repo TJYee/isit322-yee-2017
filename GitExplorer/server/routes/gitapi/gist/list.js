@@ -4,7 +4,7 @@ var GitHub = require('github-api');
 const Logger = require('../../elf-logger');
 const logger = new Logger('gist');
 
-var getGitHub = function () {
+let getGitHub = function () {
     let gh;
     if (true) {
         gh = new GitHub({

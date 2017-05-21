@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.send('OK');
 });
 
-router.use('/gist-test', require('./gist-test'));
-router.use('/get-basic-list', require('./gists'));
+router.use('/gist-create', require('./create'));
+router.use('/get-basic-list', require('./list'));
 
 module.exports = router;
