@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import GistLister from '../components/Git/Gist/GistLister';
-import {shallow} from 'enzyme';
-import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
+import React from "react";
+import ReactDOM from "react-dom";
+import GistLister from "../components/Git/Gist/GistLister";
+import {shallow} from "enzyme";
+import ElfDebugEnzyme from "../components/Debug/ElfDebugEnzyme";
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GistLister.test.js');
 
-describe('ElfHeader Suite', function () {
+describe('Gist Lister Suite', function () {
     
     it('renders the GistLister component without crashing', () => {
         const div = document.createElement('div');
@@ -21,7 +21,7 @@ describe('ElfHeader Suite', function () {
     
     it('renders GistLister UL Element', () => {
         const wrapper = shallow(<GistLister />);
-        elfDebugEnzyme.getElement(wrapper,'ul');
+        elfDebugEnzyme.getElement(wrapper, 'ul');
         expect(wrapper.find('ul').length).toEqual(1);
     });
 });
