@@ -2,9 +2,9 @@
  * Created by charlie on 10/7/15.
  */
 
-var request = require('supertest');
-var app = require('../app');
-const Logger = require('../routes/elf-logger');
+let request = require('supertest');
+let app = require('../app');
+const Logger = require('./support/elf-logger');
 const logger = new Logger('test');
 
 describe('Elvenware Gists Suite', function () {
@@ -18,7 +18,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('gets the basic gists list', function (done) {
         request(app)
-            .get('/gitapi/get-basic-list')
+            .get('/gitapi/gist/get-basic-list')
             .expect(200)
             .expect('Content-Type', /json/)
             .end(function (err, res) {
@@ -31,7 +31,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('checks the gist response data exists', function (done) {
         request(app)
-            .get('/gitapi/get-basic-list')
+            .get('/gitapi/gist/get-basic-list')
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(function (response) {
@@ -49,7 +49,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('checks the gist response has four properties: html_url, id, description, git_pull_url', function (done) {
         request(app)
-            .get('/gitapi/get-basic-list')
+            .get('/gitapi/gist/get-basic-list')
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(function (response) {

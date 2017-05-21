@@ -4,10 +4,10 @@
 
 var request = require('supertest');
 var app = require('../app');
-const Logger = require('../routes/elf-logger');
+const Logger = require('./support/elf-logger');
 const logger = new Logger('test');
 
-describe('Elvenware Foo Suite', function () {
+describe('Foo Suite', function () {
     'use strict';
     
     it('expects true to be true', function () {
