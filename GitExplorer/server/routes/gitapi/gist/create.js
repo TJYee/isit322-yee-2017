@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-var GitHub = require('github-api');
+let GitHub = require('github-api');
 const Logger = require('../../elf-logger');
 const logger = new Logger('gist');
 
