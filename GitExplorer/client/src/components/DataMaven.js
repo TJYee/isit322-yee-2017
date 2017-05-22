@@ -29,7 +29,7 @@ class DataMaven extends Component {
             id: 'ID',
             updated_at: 'Updated At',
             url: 'URL'
-        }
+        };
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
@@ -86,7 +86,7 @@ class DataMaven extends Component {
             }).then(function (json) {
             logger.log('parsed json', json);
             that.setState({
-                gitGist: json.result
+                gitGistList: json.result
             });
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER
@@ -118,8 +118,8 @@ class DataMaven extends Component {
                     )}/>
                     <Route path='/get-list' render={(props) => (
                         <GistLister {...props}
-                                     gitGist={this.state.gitGist}
-                                     onChange={this.fetchGistList}/>
+                                     gitGistList={this.state.gitGistList}
+                                    onChange={this.fetchGistList}/>
                     )}/>
                 </div>
             </Router>

@@ -11,10 +11,12 @@ router.get('/', function (request, response) {
             logger.log('USER PROMISE', data);
             const results = data.map((gist) => {
                 return {
+                    created_at: gist.created_at,
                     description: gist.description,
                     git_pull_url: gist.git_pull_url,
                     html_url: gist.html_url,
                     id: gist.id,
+                    updated_at: gist.updated_at,
                     url: gist.url
                 }
             });
