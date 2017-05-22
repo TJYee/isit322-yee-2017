@@ -33,9 +33,6 @@ class DataMaven extends Component {
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
-        for (let field of tempGitGist) {
-            tempGitGist[field.id] = field.value;
-        }
         
         this.state = {
             gitUser: tempGitUser,
