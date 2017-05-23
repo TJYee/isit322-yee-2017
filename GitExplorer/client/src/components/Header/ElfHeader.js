@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import logo from '../../images/logo.png';
-import {Link} from 'react-router-dom';
-import '../../css/menu.css';
+import React, {Component} from "react";
+import logo from "../../images/logo.png";
+import {Link} from "react-router-dom";
+import "../../css/menu.css";
 
 class ElfHeader extends Component {
     
     render() {
         return (
             <div className='App'>
-                <ul>
+                <ul className='elfMenu'>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/get-foo'>Foo</Link></li>
                     <li><Link to='/get-numbers'>Numbers</Link></li>

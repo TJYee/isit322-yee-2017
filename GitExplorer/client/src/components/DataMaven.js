@@ -36,7 +36,8 @@ class DataMaven extends Component {
         
         this.state = {
             gitUser: tempGitUser,
-            gitGist: tempGitGist
+            gitGist: tempGitGist/*,
+            gitGistList*/
         };
         
         logger.log('DataMaven constructor called.');

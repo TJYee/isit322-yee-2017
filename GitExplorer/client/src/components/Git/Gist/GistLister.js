@@ -15,30 +15,22 @@ class GistLister extends Component {
             console.log(output);
             return output.map((el, index) => {
                 return (
-                    <div className='panel panel-default'>
-                        <div className='panel panel-header'>
+                    <div className="panel panel-default">
+                        <div className="panel panel-header">
                             Index: {index}
                         </div>
-                        <ul>
-                            <li>created_at: {el.created_at}</li>
-                            <li>description: {el.description}</li>
-                            <li>git_pull_url: {el.git_pull_url}</li>
-                            <li>html_url: {el.html_url}</li>
-                            <li>id: {el.id}</li>
-                            <li>updated_at: {el.updated_at}</li>
-                            <li>url: {el.url}</li>
-                        </ul>
+                        <div className="panel panel-body">
+                            <ul>
+                                {Object.keys(el).map((key) => {
+                                    return <li>{el[key]}</li>
+                                })}
+                            </ul>
+                        </div>
                     </div>
                 )
             });
         } else {
-            return (
-                <div>
-                    <ul>
-                        <li><h3>No Data</h3></li>
-                    </ul>
-                </div>
-            );
+            return <h3> No Data </h3>;
         }
     };
     
