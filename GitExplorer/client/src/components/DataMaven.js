@@ -21,7 +21,7 @@ class DataMaven extends Component {
     constructor() {
         super();
         const tempGitUser = {};
-        let tempGitGist = {
+        let tempGitGist = [{
             created_at: 'Created At',
             description: 'Description',
             git_pull_url: 'Git Pull URL',
@@ -29,15 +29,15 @@ class DataMaven extends Component {
             id: 'ID',
             updated_at: 'Updated At',
             url: 'URL'
-        };
+        }];
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
         
         this.state = {
             gitUser: tempGitUser,
-            gitGist: tempGitGist/*,
-            gitGistList*/
+            gitGist: tempGitGist,
+            gitGistList: tempGitGist
         };
         
         logger.log('DataMaven constructor called.');
