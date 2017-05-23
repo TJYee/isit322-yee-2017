@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const Logger = require('../../elf-logger');
-const logger = new Logger('gist');
+const logger = new Logger(true, 'gist');
 let auth = require('../getGitHub');
 
 router.get('/', function (request, response) {
@@ -9,22 +9,21 @@ router.get('/', function (request, response) {
     me.listGists()
         .then(function ({data}) {
             logger.log('USER PROMISE', data);
-            const results = data.map((gist) => {
-                return {
-                    created_at: gist.created_at,
-                    description: gist.description,
-                    git_pull_url: gist.git_pull_url,
-                    html_url: gist.html_url,
-                    id: gist.id,
-                    updated_at: gist.updated_at,
-                    url: gist.url
-                }
+            response.status(200).json({
+                count: data.length,
+                result: data.map((gist) => {
+                    return {
+                        created_at: gist.created_at,
+                        description: gist.description,
+                        git_pull_url: gist.git_pull_url,
+                        html_url: gist.html_url,
+                        id: gist.id,
+                        updated_at: gist.updated_at,
+                        url: gist.url
+                    }
+                })
             });
-            response.status(200).send({
-                'count': results.length,
-                'result': results
-            });
-        }).catch(function (err) {
+        }).catch((err) => {
         logger.log('USER Promise Rejected', err);
         response.status(500).send({'result': err});
     });
