@@ -30,6 +30,7 @@ class ShowUserInfo extends Component {
         
         return (
             <form className='Form'>
+                <h2>Show Git User</h2>
                 {
                     this.props.fields.map((field, index) => {
                         return this.getForm(field, index)

@@ -31,14 +31,14 @@ class GetFoo extends Component {
     render() {
         return (
             <div className='App'>
-                <h2>GetFoo</h2>
+                <h2>Get Foo</h2>
                 <p className='App-intro'>
                     state.foo: {this.state.foo}
                 </p>
                 <p className='App-intro'>
                     state.file: {this.state.file}
                 </p>
-                <button className='getFoo' onClick={this.getFoo}>Get Foo</button>
+                <button id='getFoo' onClick={this.getFoo}>Get Foo</button>
                 <br />
             </div>
         );

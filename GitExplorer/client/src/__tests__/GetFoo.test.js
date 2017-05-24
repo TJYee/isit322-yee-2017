@@ -13,7 +13,7 @@ describe('My GetFoo test suite', function() {
     it('renders button click message for foo', () => {
         const wrapper = shallow(<GetFoo />);
         const nineSign = <p className='App-intro'>state.foo: bar</p>;
-        wrapper.find('button.getFoo').simulate('click');
+        wrapper.find('button#getFoo').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
 });
