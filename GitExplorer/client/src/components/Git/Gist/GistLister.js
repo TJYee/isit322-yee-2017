@@ -8,7 +8,7 @@ class GistLister extends Component {
         super(props);
         logger.log('GistLister Constructor');
         this.state = {
-            index: 0
+            listIndex: 0
         };
         this.gistIterator = this.gistIterator.bind(this);
     }
@@ -17,28 +17,18 @@ class GistLister extends Component {
         if (this.props.gitGistList) {
             return (
                 <div className="panel panel-default">
-                    {/*<div className="panel panel-header">
-                     Index: {index}
-                     </div>
-                     <div className="panel panel-body">
-                     <ul>
-                     {Object.keys(el).map((key) => {
-                     return <li>{el[key]}</li>
-                     })}
-                     </ul>
-                     </div>*/}
                     <ul>
-                        <li>Index: {this.state.index} / {this.props.gitGistList.length - 1}</li>
-                        <li>{this.props.gitGistList[this.state.index].created_at}</li>
-                        <li>{this.props.gitGistList[this.state.index].description}</li>
-                        <li>{this.props.gitGistList[this.state.index].git_pull_url}</li>
-                        <li>{this.props.gitGistList[this.state.index].html_url}</li>
-                        <li>{this.props.gitGistList[this.state.index].id}</li>
-                        <li>{this.props.gitGistList[this.state.index].ownerLogin}</li>
-                        <li>{this.props.gitGistList[this.state.index].updated_at}</li>
-                        <li>{this.props.gitGistList[this.state.index].url}</li>
+                        <li>Index: {this.state.listIndex} / {this.props.gitGistList.length - 1}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].created_at}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].description}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].git_pull_url}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].html_url}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].id}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].ownerLogin}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].updated_at}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].url}</li>
                     </ul>
-                    <img src={this.props.gitGistList[this.state.index].avatar_url} alt='Avatar'/>
+                    <img src={this.props.gitGistList[this.state.listIndex].avatar_url} alt='Avatar'/>
                 </div>
             )
             
@@ -50,17 +40,19 @@ class GistLister extends Component {
     gistIterator = (event) => {
         logger.log(event.target.id);
         if (event.target.id === 'nextGist') {
+            logger.log('nextGist Called');
             this.setState((prevState, props) => {
-                if (prevState.index < this.props.gitGistList.length - 1) {
-                    return {index: prevState.index + 1};
+                if (prevState.listIndex < props.gitGistList.length - 1) {
+                    return {listIndex: prevState.listIndex + 1};
                 }
-            })
+            });
         } else {
+            logger.log('prevGist Called');
             this.setState((prevState, props) => {
-                if (prevState.index > 0) {
-                    return {index: prevState.index - 1};
+                if (prevState.listIndex > 0) {
+                    return {listIndex: prevState.listIndex - 1};
                 }
-            })
+            });
         }
     };
     
@@ -75,12 +67,12 @@ class GistLister extends Component {
                 </button>
                 <button
                     id='prevGist'
-                    onClick={this.props.gistIterator}
+                    onClick={this.gistIterator}
                     disabled={!this.props.gitGistCanIterate}>Previous Gist
                 </button>
                 <button
                     id='nextGist'
-                    onClick={this.props.gistIterator}
+                    onClick={this.gistIterator}
                     disabled={!this.props.gitGistCanIterate}>Next Gist
                 </button>
                 <div>{this.generateDisplay()}</div>

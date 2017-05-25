@@ -88,7 +88,7 @@ class DataMaven extends Component {
             logger.log('parsed json', json);
             that.setState({
                 gitGistCanIterate: true,
-                gitGistList: json.result
+                gitGistList: json.result,
             });
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER
