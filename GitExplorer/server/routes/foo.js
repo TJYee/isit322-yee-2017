@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-const Logger = require('./elf-logger');
-const logger = new Logger('gitapi-foo');
+const ElfLogger = require('./elf-logger');
+const logger = new ElfLogger('foo');
 
 router.get('/', function (request, response, next) {
     const message = {

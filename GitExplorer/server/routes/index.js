@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-const Logger = require('./elf-logger');
-const logger = new Logger('routes');
+const ElfLogger = require('./elf-logger');
+const logger = new ElfLogger('index');
 
 router.use('/foo', require('./foo'));
 

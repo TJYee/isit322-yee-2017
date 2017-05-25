@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let auth = require('../getGitHub');
-const Logger = require('../../elf-logger');
-const logger = new Logger('gist');
+const ElfLogger = require('../../elf-logger');
+const logger = new ElfLogger('gist');
 
 router.get('/', function (request, response) {
     let gist = auth().getGist(); // not a gist yet

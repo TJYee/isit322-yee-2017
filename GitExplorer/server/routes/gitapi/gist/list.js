@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-const Logger = require('../../elf-logger');
-const logger = new Logger(true, 'gist');
+const ElfLogger = require('../../elf-logger');
+const logger = new ElfLogger('gist');
 let auth = require('../getGitHub');
 
 router.get('/', function (request, response) {
@@ -22,7 +22,7 @@ router.get('/', function (request, response) {
                         ownerLogin: gist.owner.login,
                         updated_at: gist.updated_at,
                         url: gist.url
-                    }
+                    };
                 })
             });
         }).catch((err) => {

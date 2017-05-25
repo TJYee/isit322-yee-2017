@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-const Logger = require('../../elf-logger');
-const logger = new Logger('gist');
+const ElfLogger = require('../../elf-logger');
+const logger = new ElfLogger('gist');
 
 router.use('/gist-create', require('./create'));
 router.use('/get-basic-list', require('./list'));

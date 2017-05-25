@@ -1,6 +1,7 @@
 let GitHub = require('github-api');
 let getGitHub = function () {
     let gh;
+    // GitHub Token with Gist permissions
     let gitToken = process.env.GHTOKEN;
     if (gitToken !== undefined && gitToken !== '') {
         gh = new GitHub({
