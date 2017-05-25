@@ -18,7 +18,7 @@ class DataMaven extends Component {
     constructor() {
         super();
         const tempGitUser = {};
-        let tempGitGist = [{
+        let tempGitGistList = [{
             avatarUrl: '/',
             createdAt: 'Created At',
             description: 'Description',
@@ -29,6 +29,13 @@ class DataMaven extends Component {
             updatedAt: 'Updated At',
             url: 'URL'
         }];
+        let tempGitGist = [{
+            created_at: 'Created At',
+            description: 'Description',
+            html_url: 'HTML URL',
+            updated_at: 'Updated At',
+            url: 'URL'
+        }];
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
@@ -37,7 +44,7 @@ class DataMaven extends Component {
             gitUser: tempGitUser,
             gitGist: tempGitGist,
             gitGistCanIterate: false,
-            gitGistList: tempGitGist
+            gitGistList: tempGitGistList
         };
         
         logger.log('DataMaven constructor called.');

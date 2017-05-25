@@ -9,12 +9,12 @@ class ElfHeader extends Component {
     render() {
         return (
             <div className='App'>
-                <ul className='elfMenu'>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/get-foo'>Foo</Link></li>
-                    <li><Link to='/get-numbers'>Numbers</Link></li>
-                    <li><Link to='/get-gist'>Insert New Gist</Link></li>
-                    <li><Link to='/get-list'>Gist Lister</Link></li>
+                <ul className='menu'>
+                    <li className='menu'><Link to='/'>Home</Link></li>
+                    <li className='menu'><Link to='/get-foo'>Foo</Link></li>
+                    <li className='menu'><Link to='/get-numbers'>Numbers</Link></li>
+                    <li className='menu'><Link to='/get-gist'>Insert New Gist</Link></li>
+                    <li className='menu'><Link to='/get-list'>Gist Lister</Link></li>
                 </ul>
                 <Jumbotron>
                     <div className='App-header'>
