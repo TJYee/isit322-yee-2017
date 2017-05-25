@@ -3,7 +3,7 @@
     height: 150px;
 }
 
-ul.elfMenu {
+ul.menu {
     background-color: #8a6d3b;
     list-style-type: none;
     margin: 0;
@@ -11,11 +11,11 @@ ul.elfMenu {
     padding: 0;
 }
 
-.elfMenu li {
+li.menu {
     float: left;
 }
 
-.elfMenu li a {
+li.menu a {
     color: white;
     display: block;
     padding: 5px 15px;
@@ -23,6 +23,7 @@ ul.elfMenu {
     text-decoration: none;
 }
 
-.elfMenu li a:hover {
+li.menu a:hover {
     background-color: #985f0d;
 }
+
