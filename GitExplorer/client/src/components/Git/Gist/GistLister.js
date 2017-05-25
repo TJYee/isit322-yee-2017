@@ -19,16 +19,16 @@ class GistLister extends Component {
                 <div className="panel panel-default">
                     <ul>
                         <li>Index: {this.state.listIndex} / {this.props.gitGistList.length - 1}</li>
-                        <li>{this.props.gitGistList[this.state.listIndex].created_at}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].createdAt}</li>
                         <li>{this.props.gitGistList[this.state.listIndex].description}</li>
-                        <li>{this.props.gitGistList[this.state.listIndex].git_pull_url}</li>
-                        <li>{this.props.gitGistList[this.state.listIndex].html_url}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].gitPullUrl}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].htmlUrl}</li>
                         <li>{this.props.gitGistList[this.state.listIndex].id}</li>
                         <li>{this.props.gitGistList[this.state.listIndex].ownerLogin}</li>
-                        <li>{this.props.gitGistList[this.state.listIndex].updated_at}</li>
+                        <li>{this.props.gitGistList[this.state.listIndex].updatedAt}</li>
                         <li>{this.props.gitGistList[this.state.listIndex].url}</li>
                     </ul>
-                    <img src={this.props.gitGistList[this.state.listIndex].avatar_url} alt='Avatar'/>
+                    <img src={this.props.gitGistList[this.state.listIndex].avatarUrl} alt='Avatar'/>
                 </div>
             )
             

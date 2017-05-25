@@ -19,14 +19,14 @@ class DataMaven extends Component {
         super();
         const tempGitUser = {};
         let tempGitGist = [{
-            avatar_url: '/',
-            created_at: 'Created At',
+            avatarUrl: '/',
+            createdAt: 'Created At',
             description: 'Description',
-            git_pull_url: 'Git Pull URL',
-            html_url: 'HTML URL',
+            gitPullUrl: 'Git Pull URL',
+            htmlUrl: 'HTML URL',
             id: 'ID',
             ownerLogin: 'Owner Login',
-            updated_at: 'Updated At',
+            updatedAt: 'Updated At',
             url: 'URL'
         }];
         for (let value of fieldDefinitions) {
