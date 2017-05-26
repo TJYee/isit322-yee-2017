@@ -47,7 +47,7 @@ describe('Elvenware Gists Suite', function () {
             });
     });
     
-    it('checks the gist response has four properties: html_url, id, description, git_pull_url', function (done) {
+    it('checks the gist response has four properties: htmlUrl, id, description, gitPullUrl', function (done) {
         request(app)
             .get('/gitapi/gist/get-basic-list')
             .expect(200)
