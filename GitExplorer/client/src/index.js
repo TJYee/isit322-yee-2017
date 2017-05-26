@@ -6,7 +6,7 @@ import DataMaven from './components/DataMaven';
 import './css/index.css';
 
 ReactDOM.render(
-    <div className='container'>
+    <div>
         <DataMaven />
     </div>,
     document.getElementById('root')
