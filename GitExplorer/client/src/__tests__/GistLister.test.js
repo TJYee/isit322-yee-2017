@@ -25,7 +25,8 @@ describe('Gist Lister Suite', function () {
         ReactDOM.render(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function(){}}
+            onChange={function () {
+            }}
         />, div);
     });
     
@@ -33,7 +34,8 @@ describe('Gist Lister Suite', function () {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function(){}}
+            onChange={function () {
+            }}
         />);
         elfDebugEnzyme.display(wrapper);
         const welcome = <h2>Gist Lister</h2>;
@@ -44,7 +46,8 @@ describe('Gist Lister Suite', function () {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function(){}}
+            onChange={function () {
+            }}
         />);
         elfDebugEnzyme.getElement(wrapper, 'ul');
         expect(wrapper.find('ul').length).toEqual(1);
