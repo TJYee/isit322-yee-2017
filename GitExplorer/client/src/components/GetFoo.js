@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 import ElfLogger from './Debug/elf-logger';
+import {Jumbotron} from 'react-bootstrap';
 const logger = new ElfLogger('foo');
 
 class GetFoo extends Component {
@@ -12,7 +13,7 @@ class GetFoo extends Component {
             foo: 'waiting for server',
         };
     }
-
+    
     getFoo = () => {
         const that = this;
         fetch('/foo')
@@ -27,19 +28,27 @@ class GetFoo extends Component {
             logger.log('parsing failed', ex);
         });
     };
-
+    
     render() {
         return (
-            <div className='App'>
-                <h2>Get Foo</h2>
-                <p className='App-intro'>
-                    state.foo: {this.state.foo}
-                </p>
-                <p className='App-intro'>
-                    state.file: {this.state.file}
-                </p>
-                <button id='getFoo' onClick={this.getFoo}>Get Foo</button>
-                <br />
+            <div>
+                <div className='col-sm-8'>
+                    <Jumbotron>
+                        <h2>Get Foo</h2>
+                        <p>
+                            state.foo: {this.state.foo}
+                        </p>
+                        <p>
+                            state.file: {this.state.file}
+                        </p>
+                        <button id='getFoo' onClick={this.getFoo}>Get Foo</button>
+                    </Jumbotron>
+                </div>
+                <div className='panel panel-info col-sm-4'>
+                    <h2 className='panel-heading'>Info</h2>
+                    <p>This component was designed to retrieve simple data from an API server and save it to state.</p>
+                    <p>The page will then display the changed state.</p>
+                </div>
             </div>
         );
     }

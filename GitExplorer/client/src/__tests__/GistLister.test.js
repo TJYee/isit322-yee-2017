@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import GistLister from "../components/Git/Gist/GistLister";
 import {shallow} from "enzyme";
 import ElfDebugEnzyme from "../components/Debug/ElfDebugEnzyme";
-const elfDebugEnzyme = new ElfDebugEnzyme(true, 'GistLister.test.js');
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GistLister.test.js');
 
 describe('Gist Lister Suite', function () {
     
@@ -30,7 +30,7 @@ describe('Gist Lister Suite', function () {
         />, div);
     });
     
-    it('renders and reads GistLister H2 text', () => {
+    /*it('renders and reads GistLister H2 text', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
@@ -40,7 +40,7 @@ describe('Gist Lister Suite', function () {
         elfDebugEnzyme.display(wrapper);
         const welcome = <h2>Gist Lister</h2>;
         expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
-    });
+    });*/
     
     it('renders GistLister UL Element', () => {
         const wrapper = shallow(<GistLister

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import '../../css/App.css';
-import ElfElements from '../Elf/ElfElements';
-import ElfLogger from '../Debug/elf-logger';
+import React, {Component} from "react";
+import "../../css/App.css";
+import ElfElements from "../Elf/ElfElements";
+import ElfLogger from "../Debug/elf-logger";
 const logger = new ElfLogger(false);
 
 class ShowUserInfo extends Component {
@@ -29,15 +29,24 @@ class ShowUserInfo extends Component {
     render() {
         
         return (
-            <form className='Form'>
-                <h2>Show Git User</h2>
-                {
-                    this.props.fields.map((field, index) => {
-                        return this.getForm(field, index)
-                    })
-                }
-                <button id='getUser' onClick={this.props.onChange}>Get User</button>
-            </form>
+            <div>
+                <div className='col-sm-8'>
+                    <form className='Form'>
+                        <h2>Show Git User</h2>
+                        {
+                            this.props.fields.map((field, index) => {
+                                return this.getForm(field, index)
+                            })
+                        }
+                        <button id='getUser' onClick={this.props.onChange}>Get User</button>
+                    </form>
+                </div>
+                <div className='panel panel-info col-sm-4'>
+                    <h2 className='panel-heading'>Info</h2>
+                    <p>This component was designed to retrieve GitHub User Information and save it to state.</p>
+                    
+                </div>
+            </div>
         )
     }
 }
