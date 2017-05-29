@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Button } from 'react-bootstrap';
 import "../../../css/App.css";
 import ElfLogger from "../../Debug/elf-logger";
 const logger = new ElfLogger('gist-lister');
@@ -60,21 +61,24 @@ class GistLister extends Component {
         return (
             <div>
                 <h2>Git Lister</h2>
-                <button
+                <Button
+                    bsStyle='primary'
                     id='gistLister'
                     onClick={this.props.onChange}
                     disabled={this.props.gitGistCanIterate}>Get Gists
-                </button>
-                <button
+                </Button>
+                <Button
+                    bsStyle='primary'
                     id='prevGist'
                     onClick={this.gistIterator}
                     disabled={!this.props.gitGistCanIterate}>Previous Gist
-                </button>
-                <button
+                </Button>
+                <Button
+                    bsStyle='primary'
                     id='nextGist'
                     onClick={this.gistIterator}
                     disabled={!this.props.gitGistCanIterate}>Next Gist
-                </button>
+                </Button>
                 <div>{this.generateDisplay()}</div>
             </div>
         )
