@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 //import {Link} from "react-router-dom";
-import {Jumbotron, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
+import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
-import logo from "../../images/logo.png";
 import "../../css/menu.css";
 
-class ElfHeader extends Component {
+class ExplorerMenu extends Component {
     
     render() {
         const navbarInstance = (
@@ -34,17 +33,11 @@ class ElfHeader extends Component {
             </Navbar>
         );
         return (
-            <div className='App'>
+            <div>
                 {navbarInstance}
-                <Jumbotron>
-                    <div className='App-header'>
-                        <img src={logo} className='App-logo' alt='logo'/>
-                        <h2>Git Explorer</h2>
-                    </div>
-                </Jumbotron>
             </div>
         );
     }
 }
 
-export default ElfHeader;
+export default ExplorerMenu;

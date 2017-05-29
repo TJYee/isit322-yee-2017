@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import "../css/App.css";
 import "whatwg-fetch";
 import fieldDefinitions from "./Init/field-definitions";
-import ElfHeader from "./Header/ElfHeader";
+import ExplorerMenu from "./Header/ExplorerMenu";
+import ExplorerHeader from "./Header/ExplorerHeader";
 import ElfLogger from "./Debug/elf-logger";
 import ShowUserInfo from "./Git/ShowUserInfo";
 import GetFoo from "./GetFoo";
@@ -106,33 +107,36 @@ class DataMaven extends Component {
     
     render() {
         return (
-            <Router>
-                <div className='container'>
-                    <ElfHeader/>
-                    <Route exact path='/' render={(props) => (
-                        <ShowUserInfo {...props}
-                                      gitUser={this.state.gitUser}
-                                      fields={fieldDefinitions}
-                                      onChange={this.fetchUser}/>
-                    )}/>
-                    <Route path='/get-foo' component={GetFoo}/>
-                    <Route path='/get-numbers' render={(props) => (
-                        <SmallNumbers {...props}
-                                      numbers={numbersInit}/>
-                    )}/>
-                    <Route path='/get-gist' render={(props) => (
-                        <ShowNewGist {...props}
-                                     gitGist={this.state.gitGist}
-                                     onChange={this.fetchGist}/>
-                    )}/>
-                    <Route path='/get-list' render={(props) => (
-                        <GistLister {...props}
-                                    gitGistCanIterate={this.state.gitGistCanIterate}
-                                    gitGistList={this.state.gitGistList}
-                                    onChange={this.fetchGistList}/>
-                    )}/>
-                </div>
-            </Router>
+            <div className='container-fluid'>
+                <Router>
+                    <div>
+                        <ExplorerMenu/>
+                        <ExplorerHeader/>
+                        <Route exact path='/' render={(props) => (
+                            <ShowUserInfo {...props}
+                                          gitUser={this.state.gitUser}
+                                          fields={fieldDefinitions}
+                                          onChange={this.fetchUser}/>
+                        )}/>
+                        <Route path='/get-foo' component={GetFoo}/>
+                        <Route path='/get-numbers' render={(props) => (
+                            <SmallNumbers {...props}
+                                          numbers={numbersInit}/>
+                        )}/>
+                        <Route path='/get-gist' render={(props) => (
+                            <ShowNewGist {...props}
+                                         gitGist={this.state.gitGist}
+                                         onChange={this.fetchGist}/>
+                        )}/>
+                        <Route path='/get-list' render={(props) => (
+                            <GistLister {...props}
+                                        gitGistCanIterate={this.state.gitGistCanIterate}
+                                        gitGistList={this.state.gitGistList}
+                                        onChange={this.fetchGistList}/>
+                        )}/>
+                    </div>
+                </Router>
+            </div>
         );
     }
 }
