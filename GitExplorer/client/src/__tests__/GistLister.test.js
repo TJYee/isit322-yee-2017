@@ -89,50 +89,86 @@ describe('Gist Lister Suite', function () {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
-    it('renders GistLister default createdAt li Element', () => {
+    it('renders GistLister default gitPullUrl li Element', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
             onChange={function () {
             }}
         />);
-        const sign = <li>Created At</li>;
+        const sign = <li>Git Pull URL</li>;
         elfDebugEnzyme.getElement(wrapper, 'li');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
-    it('renders GistLister default createdAt li Element', () => {
+    it('renders GistLister default htmlUrl li Element', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
             onChange={function () {
             }}
         />);
-        const sign = <li>Created At</li>;
+        const sign = <li>HTML URL</li>;
         elfDebugEnzyme.getElement(wrapper, 'li');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
-    it('renders GistLister default createdAt li Element', () => {
+    it('renders GistLister default id li Element', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
             onChange={function () {
             }}
         />);
-        const sign = <li>Created At</li>;
+        const sign = <li>ID</li>;
         elfDebugEnzyme.getElement(wrapper, 'li');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
-    it('renders GistLister default createdAt li Element', () => {
+    it('renders GistLister default ownerLogin li Element', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
             onChange={function () {
             }}
         />);
-        const sign = <li>Created At</li>;
+        const sign = <li>Owner Login</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default updatedAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Updated At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default url li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>URL</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default img Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <img src='/' alt='Avatar'/>;
         elfDebugEnzyme.getElement(wrapper, 'li');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
