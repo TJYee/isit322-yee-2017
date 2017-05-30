@@ -60,7 +60,7 @@ class GistLister extends Component {
     render() {
         return (
             <div>
-                <h2>Git Lister</h2>
+                <h2>Gist Lister</h2>
                 <Button
                     bsStyle='primary'
                     id='gistLister'
