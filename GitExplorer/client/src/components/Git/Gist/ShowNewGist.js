@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import '../../../css/App.css';
-import ElfLogger from '../../Debug/elf-logger';
+import React, {Component} from "react";
+import "../../../css/App.css";
+import ElfLogger from "../../Debug/elf-logger";
 const logger = new ElfLogger(false);
 
 class ShowNewGist extends Component {
@@ -18,19 +18,19 @@ class ShowNewGist extends Component {
             <div className='App'>
                 <h2>Insert New Gist</h2>
                 
-                <p className='App-intro'>
+                <p>
                     created_at: {this.props.gitGist.created_at}
                 </p>
-                <p className='App-intro'>
+                <p>
                     description: {this.props.gitGist.description}
                 </p>
-                <p className='App-intro'>
+                <p>
                     html_url: <a href={this.props.gitGist.html_url}>{this.props.gitGist.html_url}</a>
                 </p>
-                <p className='App-intro'>
+                <p>
                     updated_at: {this.props.gitGist.updated_at}
                 </p>
-                <p className='App-intro'>
+                <p>
                     url: <a href={this.props.gitGist.url}>{this.props.gitGist.url}</a>
                 </p>
                 
