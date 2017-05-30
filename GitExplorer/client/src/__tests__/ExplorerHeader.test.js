@@ -13,7 +13,7 @@ describe('My Header test suite', function() {
     it('renders and reads H2 text', () => {
         const wrapper = shallow(<ElfHeader />);
         const welcome = <h2>Git Explorer</h2>;
-        elfDebugEnzyme.display(wrapper);
+        elfDebugEnzyme.getElement(wrapper, 'h2');
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 });

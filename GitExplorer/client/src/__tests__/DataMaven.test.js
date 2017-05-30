@@ -20,7 +20,6 @@ describe('My DataMaven test suite', function () {
     it('renders default login data', () => {
         const wrapper = mount(<DataMaven />);
         const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
-        elfDebugEnzyme.display(sign);
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
