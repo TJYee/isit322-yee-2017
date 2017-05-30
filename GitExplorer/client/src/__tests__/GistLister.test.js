@@ -37,20 +37,104 @@ describe('Gist Lister Suite', function () {
             onChange={function () {
             }}
         />);
-        //elfDebugEnzyme.display(wrapper.debug());
+        elfDebugEnzyme.getElement(wrapper, 'h2');
         const welcome = <h2>Gist Lister</h2>;
         expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
     });
     
-    it('renders GistLister UL Element', () => {
+    it('renders GistLister ul Element', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
             onChange={function () {
             }}
         />);
-        //elfDebugEnzyme.getElement(wrapper, 'ul');
+        elfDebugEnzyme.getElement(wrapper, 'ul');
         expect(wrapper.find('ul').length).toEqual(1);
+    });
+    
+    it('renders GistLister default index li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Index: 0 / 0</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default createdAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Created At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default description li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Description</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default createdAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Created At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default createdAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Created At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default createdAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Created At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders GistLister default createdAt li Element', () => {
+        const wrapper = shallow(<GistLister
+            gitGistCanIterate={iterationBool}
+            gitGistList={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <li>Created At</li>;
+        elfDebugEnzyme.getElement(wrapper, 'li');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
     it('gistLister button responds to button click', () => {
@@ -66,7 +150,7 @@ describe('Gist Lister Suite', function () {
             gitGistList={bodyData}
             onChange={callback}
         />);
-        //elfDebugEnzyme.display(wrapper.debug());
+        elfDebugEnzyme.getElement(wrapper, 'Button');
         wrapper.find('Button#gistLister').simulate('click');
         expect(clicked).toEqual(true);
     });
