@@ -8,7 +8,11 @@ const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowNewGist.test.js');
 describe('My ShowNewGist test suite', function () {
     
     let bodyData = {
-        created_at: 'testTime'
+        created_at: 'testCreated At',
+        description: 'testDescription',
+        html_url: 'testHTML URL',
+        updated_at: 'testUpdated At',
+        url: 'testURL'
     };
     
     it('expects true to be true', function () {
@@ -30,7 +34,55 @@ describe('My ShowNewGist test suite', function () {
             onChange={function () {
             }}
         />);
-        const sign = <p className='App-intro'>created_at: testTime</p>;
+        const sign = <p>created_at: testCreated At</p>;
+        //console.log(sign);
+        elfDebugEnzyme.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders default description data', function () {
+        const wrapper = shallow(<ShowNewGist
+            gitGist={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <p>description: testDescription</p>;
+        //console.log(sign);
+        elfDebugEnzyme.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders default html_url data', function () {
+        const wrapper = shallow(<ShowNewGist
+            gitGist={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <p>html_url: <a href='testHTML URL'>testHTML URL</a></p>;
+        //console.log(sign);
+        elfDebugEnzyme.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders default updated_at data', function () {
+        const wrapper = shallow(<ShowNewGist
+            gitGist={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <p>updated_at: testUpdated At</p>;
+        //console.log(sign);
+        elfDebugEnzyme.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
+    });
+    
+    it('renders default url data', function () {
+        const wrapper = shallow(<ShowNewGist
+            gitGist={bodyData}
+            onChange={function () {
+            }}
+        />);
+        const sign = <p>url: <a href='testURL'>testURL</a></p>;
         //console.log(sign);
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
