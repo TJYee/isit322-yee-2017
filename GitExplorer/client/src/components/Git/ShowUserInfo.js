@@ -16,8 +16,8 @@ class ShowUserInfo extends Component {
     
     getForm = (field, index) => {
         return (
-            <div className='ElfFormRow' key={field.id}>
-                <label className='ElfFormLabel' htmlFor={field.id}>{field.label}:</label>
+            <div key={field.id}>
+                <label htmlFor={field.id}>{field.label}:</label>
                 <ElfElements {...field}
                              value={this.props.gitUser[field.id] || ''}
                              onChange={this.props.onChange}
@@ -43,7 +43,9 @@ class ShowUserInfo extends Component {
                 </div>
                 <div className='panel panel-info col-sm-4'>
                     <h2 className='panel-heading'>Info</h2>
-                    <p>This component was designed to retrieve GitHub User Information and save it to state.</p>
+                    <p>This component was designed to fetch GitHub User Information and save it to state.</p>
+                    <p>The page will automatically print dummy data from a local file.</p>
+                    <p>The dummy data will be overwritten after state is altered.</p>
                     
                 </div>
             </div>

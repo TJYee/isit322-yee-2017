@@ -46,7 +46,7 @@ class GetFoo extends Component {
                 </div>
                 <div className='panel panel-info col-sm-4'>
                     <h2 className='panel-heading'>Info</h2>
-                    <p>This component was designed to retrieve simple data from an API server and save it to state.</p>
+                    <p>This component was designed to fetch simple data from an API server and save it to state.</p>
                     <p>The page will then display the changed state.</p>
                 </div>
             </div>
