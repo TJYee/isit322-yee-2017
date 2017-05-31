@@ -179,4 +179,4 @@ export default [
         type: 'paragraph',
         sample: 'updated_at-unknown'
     }
-    ]
+]
