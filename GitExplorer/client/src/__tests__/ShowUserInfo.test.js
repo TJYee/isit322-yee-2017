@@ -39,7 +39,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='login'>login-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -51,7 +51,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='id'>id-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -63,7 +63,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='avatar_url'>avatar_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -75,7 +75,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='gravatar_id'>gravatar_id-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -87,7 +87,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='url'>url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -99,7 +99,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='html_url'>html_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -111,7 +111,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='followers_url'>followers_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -123,7 +123,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='following_url'>following_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -135,7 +135,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='gists_url'>gists_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -147,7 +147,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='starred_url'>starred_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -159,7 +159,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='subscriptions_url'>subscriptions_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -171,7 +171,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='organizations_url'>organizations_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -183,7 +183,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='repos_url'>repos_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -195,7 +195,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='events_url'>events_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -207,7 +207,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='received_events_url'>received_events_url-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -219,7 +219,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='type'>type-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -231,7 +231,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='site_admin'>site_admin-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -243,7 +243,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='name'>name-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -255,7 +255,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='company'>company-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -267,7 +267,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='blog'>blog-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -279,7 +279,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='location'>location-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -291,7 +291,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='email'>email-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -303,7 +303,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='hireable'>hireable-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -315,7 +315,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='bio'>bio-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -327,7 +327,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='public_repos'>public_repos-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -339,7 +339,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='public_gists'>public_gists-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -351,7 +351,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='followers'>followers-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -363,7 +363,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='following'>following-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -375,7 +375,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='created_at'>created_at-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -387,7 +387,7 @@ describe('My ShowUserInfo test suite', () => {
             }}
         />);
         const sign = <p id='updated_at'>updated_at-unknown</p>;
-        elfDebugEnzyme.getElement(wrapper, 'p');
+        //elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
