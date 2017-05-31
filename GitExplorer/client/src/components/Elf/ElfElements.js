@@ -32,18 +32,16 @@ class ElfElements extends Component {
 
             case 'paragraph':
                 return <p
-                    className='ElfFormParagraph'
                     id={this.props.id}
 
                     onChange={this.props.onChange}
                 >{this.props.value}</p>;
 
             case 'textarea':
-                return <textarea {...common} className='ElfFormInput' value={this.props.value}/>;
+                return <textarea {...common} value={this.props.value}/>;
 
             case 'text': {
                 return <input
-                    className='ElfFormInput'
                     id={this.props.id}
                     value={this.props.value}
                     type={this.props.type}
