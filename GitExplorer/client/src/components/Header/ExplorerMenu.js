@@ -2,13 +2,12 @@ import React, {Component} from "react";
 //import {Link} from "react-router-dom";
 import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
-import "../../css/menu.css";
 
 class ExplorerMenu extends Component {
     
     render() {
-        const navbarInstance = (
-            <Navbar inverse collapseOnSelect>
+        return (
+            <Navbar fixedTop inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <LinkContainer to='/'><NavItem>Git Explorer</NavItem></LinkContainer>
@@ -27,11 +26,6 @@ class ExplorerMenu extends Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-        );
-        return (
-            <div>
-                {navbarInstance}
-            </div>
         );
     }
 }

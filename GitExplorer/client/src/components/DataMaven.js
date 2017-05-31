@@ -108,11 +108,13 @@ class DataMaven extends Component {
     
     render() {
         return (
-            <div className='container-fluid'>
-                <Router>
-                    <div>
+            <Router>
+                <div className='App'>
+                    <div className='container-fluid App-header'>
                         <ExplorerMenu/>
                         <ExplorerHeader/>
+                    </div>
+                    <div className='container-fluid'>
                         <Route path='/' component={Home}/>
                         <Route exact path='/get-user' render={(props) => (
                             <ShowUserInfo {...props}
@@ -137,8 +139,8 @@ class DataMaven extends Component {
                                         onChange={this.fetchGistList}/>
                         )}/>
                     </div>
-                </Router>
-            </div>
+                </div>
+            </Router>
         );
     }
 }
