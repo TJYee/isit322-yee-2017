@@ -61,7 +61,7 @@ export default class ElfDebugEnzyme {
     getLast(wrapper, element, showMe) {
         if (this.showData || showMe) {
             const paragraphData = wrapper.find(element).last().debug();
-            this.display(this.callerName + paragraphData);
+            this.display(paragraphData);
         }
 
     }
