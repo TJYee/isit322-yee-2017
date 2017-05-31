@@ -1,8 +1,8 @@
 import React, {Component} from "react";
+import {Button, Jumbotron} from "react-bootstrap";
 import "../css/App.css";
 import "whatwg-fetch";
 import ElfLogger from "./Debug/elf-logger";
-import {Jumbotron} from "react-bootstrap";
 const logger = new ElfLogger('foo');
 
 class GetFoo extends Component {
@@ -41,7 +41,13 @@ class GetFoo extends Component {
                         <p>
                             state.file: {this.state.file}
                         </p>
-                        <button id='getFoo' onClick={this.getFoo}>Get Foo</button>
+                        <Button
+                            bsStyle='primary'
+                            id='getFoo'
+                            onClick={this.getFoo}
+                        >
+                            Get Foo
+                        </Button>
                     </Jumbotron>
                 </div>
                 <div className='panel panel-info col-sm-4'>
