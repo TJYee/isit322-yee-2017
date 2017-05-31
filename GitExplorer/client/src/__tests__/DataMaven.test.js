@@ -39,7 +39,7 @@ describe('My DataMaven test suite', () => {
         const wrapper = mount(<DataMaven />);
         const sign = <p>Please note that an environment variable of "GHTOKEN" needs to be defined as a GitHub Token with
             Gist permissions.</p>;
-        elfDebugEnzyme.getFirst(wrapper, 'p');
+        elfDebugEnzyme.getLast(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 });
