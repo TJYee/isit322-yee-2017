@@ -1,9 +1,10 @@
-export default [{
-    id: 'login',
-    label: 'login-Name',
-    type: 'paragraph',
-    sample: 'login-unknown'
-},
+export default [
+    {
+        id: 'login',
+        label: 'login-Name',
+        type: 'paragraph',
+        sample: 'login-unknown'
+    },
     {
         id: 'id',
         label: 'id-Name',
@@ -177,4 +178,5 @@ export default [{
         label: 'updated_at-Name',
         type: 'paragraph',
         sample: 'updated_at-unknown'
-    }]
+    }
+    ]
