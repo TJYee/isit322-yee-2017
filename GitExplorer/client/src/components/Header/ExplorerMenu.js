@@ -17,7 +17,7 @@ class ExplorerMenu extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <LinkContainer to='/'><NavItem>Get Git User</NavItem></LinkContainer>
+                        <LinkContainer to='/get-user'><NavItem>Get Git User</NavItem></LinkContainer>
                         <LinkContainer to='/get-foo'><NavItem>Get Foo</NavItem></LinkContainer>
                         <LinkContainer to='/get-numbers'><NavItem>Numbers</NavItem></LinkContainer>
                         <NavDropdown eventKey={3} title='Gists' id='basic-nav-gist'>

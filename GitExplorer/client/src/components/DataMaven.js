@@ -4,12 +4,13 @@ import "whatwg-fetch";
 import fieldDefinitions from "./Init/field-definitions";
 import ExplorerMenu from "./Header/ExplorerMenu";
 import ExplorerHeader from "./Header/ExplorerHeader";
-import ElfLogger from "./Debug/elf-logger";
+import Home from "./Home";
 import ShowUserInfo from "./Git/ShowUserInfo";
 import GetFoo from "./GetFoo";
-import numbersInit from "./Init/numbers-data";
 import ShowNewGist from "./Git/Gist/ShowNewGist";
 import GistLister from "./Git/Gist/GistLister";
+import numbersInit from "./Init/numbers-data";
+import ElfLogger from "./Debug/elf-logger";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import SmallNumbers from "./Number/SmallNumbers";
@@ -112,7 +113,8 @@ class DataMaven extends Component {
                     <div>
                         <ExplorerMenu/>
                         <ExplorerHeader/>
-                        <Route exact path='/' render={(props) => (
+                        <Route path='/' component={Home}/>
+                        <Route exact path='/get-user' render={(props) => (
                             <ShowUserInfo {...props}
                                           gitUser={this.state.gitUser}
                                           fields={fieldDefinitions}
