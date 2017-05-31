@@ -22,16 +22,16 @@ describe('My DataMaven test suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders and reads p header element', () => {
-        const wrapper = mount(<DataMaven />);
-        const sign = <p>This project was made for Bellevue College's Spring 2017 ISIT 322 Course.</p>;
-        elfDebugEnzyme.getFirst(wrapper, 'p');
-        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
-    });
-
     it('renders the Navbar element', () => {
         const wrapper = mount(<DataMaven />);
         //elfDebugEnzyme.getFirst(wrapper, 'Navbar');
         expect(wrapper.find('Navbar').length).toEqual(1);
+    });
+
+    it('renders and reads p home element', () => {
+        const wrapper = mount(<DataMaven />);
+        const sign = <p>This project was made for Bellevue College's Spring 2017 ISIT 322 Course.</p>;
+        elfDebugEnzyme.getFirst(wrapper, 'p');
+        expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 });
