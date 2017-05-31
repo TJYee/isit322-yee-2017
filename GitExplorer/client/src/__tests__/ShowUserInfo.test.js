@@ -6,47 +6,44 @@ import fieldDefinitions from '../components/Init/backupfield-definitions';
 import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
 
+describe('My ShowUserInfo test suite', () => {
 
-describe('My ShowUserInfo test suite', function () {
-    
     let bodyData = {};
-    
-    beforeEach(function () {
+
+    beforeEach(() => {
         const tempBody = {};
         for (let value of fieldDefinitions) {
             tempBody[value.id] = value.sample;
         }
         bodyData = tempBody;
     });
-    
-    
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<ShowUserInfo
             fields={fieldDefinitions}
             gitUser={bodyData}
-            onChange={function () {
+            onChange={() => {
             }}
         />, div);
     });
-    
-    it('expects true to be true', function () {
+
+    it('expects true to be true', () => {
         expect(true).toBe(true);
     });
-    
+
     it('renders default login data', () => {
         const wrapper = mount(<ShowUserInfo
             fields={fieldDefinitions}
             gitUser={bodyData}
-            onChange={function () {
+            onChange={() => {
             }}
         />);
         const sign = <p id='login'>login-unknown</p>;
-        //console.log(sign);
-        elfDebugEnzyme.getFirst(wrapper, 'p');
+        elfDebugEnzyme.getElement(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
-    
+
     it('responds to a button click', () => {
         //create variable to track button click status
         let clicked = false;
@@ -54,7 +51,7 @@ describe('My ShowUserInfo test suite', function () {
         const callback = () => {
             clicked = true;
         };
-        
+
         const wrapper = mount(<ShowUserInfo
             fields={fieldDefinitions}
             gitUser={bodyData}
@@ -63,5 +60,5 @@ describe('My ShowUserInfo test suite', function () {
         wrapper.find('button#getUser').simulate('click');
         expect(clicked).toEqual(true);
     });
-    
+
 });

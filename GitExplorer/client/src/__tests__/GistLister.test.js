@@ -24,7 +24,7 @@ describe('Gist Lister Suite', () => {
         ReactDOM.render(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />, div);
     });
@@ -33,7 +33,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         elfDebugEnzyme.getElement(wrapper, 'h2');
@@ -45,7 +45,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         elfDebugEnzyme.getElement(wrapper, 'ul');
@@ -56,7 +56,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Index: 0 / 0</li>;
@@ -68,7 +68,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Created At</li>;
@@ -80,7 +80,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Description</li>;
@@ -92,7 +92,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Git Pull URL</li>;
@@ -104,7 +104,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>HTML URL</li>;
@@ -116,7 +116,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>ID</li>;
@@ -128,7 +128,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Owner Login</li>;
@@ -140,7 +140,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>Updated At</li>;
@@ -152,7 +152,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <li>URL</li>;
@@ -164,7 +164,7 @@ describe('Gist Lister Suite', () => {
         const wrapper = shallow(<GistLister
             gitGistCanIterate={iterationBool}
             gitGistList={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />);
         const sign = <img src='/' alt='Avatar'/>;

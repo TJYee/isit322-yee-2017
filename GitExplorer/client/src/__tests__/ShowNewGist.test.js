@@ -5,7 +5,7 @@ import {shallow} from 'enzyme';
 import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowNewGist.test.js');
 
-describe('My ShowNewGist test suite', function() {
+describe('My ShowNewGist test suite', () => {
     let bodyData = {
         created_at: 'testCreated At',
         description: 'testDescription',
@@ -14,23 +14,23 @@ describe('My ShowNewGist test suite', function() {
         url: 'testURL'
     };
 
-    it('expects true to be true', function() {
+    it('expects true to be true', () => {
         expect(true).toBe(true);
     });
 
-    it('renders without crashing', function() {
+    it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={() => {
             }}
         />, div);
     });
 
-    it('renders default created_at data', function() {
+    it('renders default created_at data', () => {
         const wrapper = shallow(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={ () => {
             }}
         />);
         const sign = <p>created_at: testCreated At</p>;
@@ -38,10 +38,10 @@ describe('My ShowNewGist test suite', function() {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders default description data', function() {
+    it('renders default description data', () => {
         const wrapper = shallow(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={ () => {
             }}
         />);
         const sign = <p>description: testDescription</p>;
@@ -49,10 +49,10 @@ describe('My ShowNewGist test suite', function() {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders default html_url data', function() {
+    it('renders default html_url data', () => {
         const wrapper = shallow(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={ () => {
             }}
         />);
         const sign = <p>html_url: <a href='testHTML URL'>testHTML URL</a></p>;
@@ -60,10 +60,10 @@ describe('My ShowNewGist test suite', function() {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders default updated_at data', function() {
+    it('renders default updated_at data', () => {
         const wrapper = shallow(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={ () => {
             }}
         />);
         const sign = <p>updated_at: testUpdated At</p>;
@@ -71,10 +71,10 @@ describe('My ShowNewGist test suite', function() {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders default url data', function() {
+    it('renders default url data', () => {
         const wrapper = shallow(<ShowNewGist
             gitGist={bodyData}
-            onChange={function() {
+            onChange={ () => {
             }}
         />);
         const sign = <p>url: <a href='testURL'>testURL</a></p>;
