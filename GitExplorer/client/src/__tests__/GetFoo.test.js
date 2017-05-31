@@ -5,7 +5,6 @@ import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GetFoo.test.js');
 
 describe('My GetFoo test suite', () => {
-
     it('expects true to be true', () => {
         expect(true).toBe(true);
     });
