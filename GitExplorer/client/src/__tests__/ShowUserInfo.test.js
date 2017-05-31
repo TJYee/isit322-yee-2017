@@ -7,7 +7,6 @@ import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
 
 describe('My ShowUserInfo test suite', () => {
-
     let bodyData = {};
 
     beforeEach(() => {
@@ -60,5 +59,4 @@ describe('My ShowUserInfo test suite', () => {
         wrapper.find('button#getUser').simulate('click');
         expect(clicked).toEqual(true);
     });
-
 });

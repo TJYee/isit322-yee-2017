@@ -6,7 +6,6 @@ import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'SmallNumbers.test.js');
 
 describe('My SmallNumbers test suite', () => {
-
     it('expects true to be true', () => {
         expect(true).toBe(true);
     });
