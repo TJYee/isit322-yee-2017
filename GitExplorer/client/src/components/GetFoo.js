@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import '../css/App.css';
-import 'whatwg-fetch';
-import ElfLogger from './Debug/elf-logger';
-import {Jumbotron} from 'react-bootstrap';
+import React, {Component} from "react";
+import "../css/App.css";
+import "whatwg-fetch";
+import ElfLogger from "./Debug/elf-logger";
+import {Jumbotron} from "react-bootstrap";
 const logger = new ElfLogger('foo');
 
 class GetFoo extends Component {
@@ -10,10 +10,10 @@ class GetFoo extends Component {
         super();
         this.state = {
             file: 'Get Foo File will be placed here.',
-            foo: 'waiting for server',
+            foo: 'Waiting for server.',
         };
-    }
-    
+    };
+
     getFoo = () => {
         const that = this;
         fetch('/foo')
@@ -28,7 +28,7 @@ class GetFoo extends Component {
             logger.log('parsing failed', ex);
         });
     };
-    
+
     render() {
         return (
             <div>
