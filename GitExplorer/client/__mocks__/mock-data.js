@@ -3,7 +3,7 @@ const getData = (url) => {
         case '/foo':
             return {
                 foo: 'bar',
-                file: 'api.js'
+                file: 'getFoo.js'
             };
         case '/gitapi/user':
             return {
