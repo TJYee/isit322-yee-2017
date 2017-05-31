@@ -41,7 +41,7 @@ describe('My ShowUserInfo test suite', function () {
             onChange={function () {
             }}
         />);
-        const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
+        const sign = <p id='login'>login-unknown</p>;
         //console.log(sign);
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);

@@ -19,14 +19,14 @@ describe('My DataMaven test suite', function () {
     
     it('renders default login data', () => {
         const wrapper = mount(<DataMaven />);
-        const sign = <p className='ElfFormParagraph' id='login'>login-unknown</p>;
+        const sign = <p id='login'>login-unknown</p>;
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
     
     it('renders login data when button is clicked', () => {
         const wrapper = mount(<DataMaven />);
-        const sign = <p className='ElfFormParagraph' id='login'>Robin Dudette</p>;
+        const sign = <p id='login'>Robin Dudette</p>;
         wrapper.find('button#getUser').simulate('click');
         elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
