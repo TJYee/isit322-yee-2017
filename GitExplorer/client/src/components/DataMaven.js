@@ -115,7 +115,7 @@ class DataMaven extends Component {
                         <ExplorerHeader/>
                     </div>
                     <div className='container-fluid'>
-                        <Route path='/' component={Home}/>
+                        <Route exact path='/' component={Home}/>
                         <Route exact path='/get-user' render={(props) => (
                             <ShowUserInfo {...props}
                                           gitUser={this.state.gitUser}
