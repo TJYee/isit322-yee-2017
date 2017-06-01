@@ -6,17 +6,30 @@ import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
 const elfDebugEnzyme = new ElfDebugEnzyme(false, 'GistLister.test.js');
 
 describe('Gist Lister Suite', () => {
-    let bodyData = [{
-        avatarUrl: '/',
-        createdAt: 'Created At',
-        description: 'Description',
-        gitPullUrl: 'Git Pull URL',
-        htmlUrl: 'HTML URL',
-        id: 'ID',
-        ownerLogin: 'Owner Login',
-        updatedAt: 'Updated At',
-        url: 'URL'
-    }];
+    let bodyData = [
+        {
+            avatarUrl: '/',
+            createdAt: 'Created At',
+            description: 'Description',
+            gitPullUrl: 'Git Pull URL',
+            htmlUrl: 'HTML URL',
+            id: 'ID',
+            ownerLogin: 'Owner Login',
+            updatedAt: 'Updated At',
+            url: 'URL'
+        },
+        {
+            avatarUrl: '/',
+            createdAt: 'Created At',
+            description: 'Description',
+            gitPullUrl: 'Git Pull URL',
+            htmlUrl: 'HTML URL',
+            id: 'ID',
+            ownerLogin: 'Owner Login',
+            updatedAt: 'Updated At',
+            url: 'URL'
+        }
+    ];
     let iterationBool = false;
 
     it('renders the GistLister component without crashing', () => {
@@ -59,7 +72,7 @@ describe('Gist Lister Suite', () => {
             onChange={() => {
             }}
         />);
-        const sign = <li>Index: 0 / 0</li>;
+        const sign = <li>Index: 0 / 1</li>;
         elfDebugEnzyme.getElement(wrapper, 'li');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
