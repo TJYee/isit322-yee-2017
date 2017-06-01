@@ -6,7 +6,7 @@ const logger = new ElfLogger('index');
 router.use('/foo', require('./foo'));
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {title: 'server'});
 });
