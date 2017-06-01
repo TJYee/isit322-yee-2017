@@ -4,7 +4,7 @@ import ShowUserInfo from '../components/Git/ShowUserInfo';
 import {mount} from 'enzyme';
 import fieldDefinitions from '../components/Init/field-definitions';
 import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
-const elfDebugEnzyme = new ElfDebugEnzyme(true, 'ShowUserInfo.test.js');
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
 
 describe('My ShowUserInfo test suite', () => {
     let bodyData = {};
@@ -404,7 +404,7 @@ describe('My ShowUserInfo test suite', () => {
             gitUser={bodyData}
             onChange={callback}
         />);
-        elfDebugEnzyme.getElement(wrapper, 'Button');
+        elfDebugEnzyme.getElement(wrapper, 'button');
         wrapper.find('button#getUser').simulate('click');
         expect(clicked).toEqual(true);
     });
