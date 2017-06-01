@@ -3,7 +3,7 @@ import {Button, Jumbotron} from "react-bootstrap";
 import "../../css/App.css";
 import ElfElements from "../Elf/ElfElements";
 import ElfLogger from "../Debug/elf-logger";
-const logger = new ElfLogger(false);
+const logger = new ElfLogger('gist-user');
 
 class ShowUserInfo extends Component {
     constructor(props) {

@@ -12,6 +12,7 @@ class GetFoo extends Component {
             file: 'Get Foo File will be placed here.',
             foo: 'Waiting for server.',
         };
+        logger.log('GetFoo constructor called.')
     };
 
     getFoo = () => {

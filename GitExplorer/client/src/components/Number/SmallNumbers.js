@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {Button, Jumbotron} from "react-bootstrap";
 import "../../css/App.css";
+import ElfLogger from "../Debug/elf-logger";
+
+const logger = new ElfLogger('numbers');
 
 class SmallNumbers extends Component {
     constructor(props) {
@@ -16,6 +19,7 @@ class SmallNumbers extends Component {
             two: this.props.numbers.two,
             one: this.props.numbers.one
         };
+        logger.log('SmallNumbers constructor Called.');
     }
 
     getNine = () => {

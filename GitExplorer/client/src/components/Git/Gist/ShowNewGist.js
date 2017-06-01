@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Button, Jumbotron} from "react-bootstrap";
 import "../../../css/App.css";
 import ElfLogger from "../../Debug/elf-logger";
-const logger = new ElfLogger(false);
+const logger = new ElfLogger('gist-user');
 
 class ShowNewGist extends Component {
     constructor(props) {
@@ -12,6 +12,7 @@ class ShowNewGist extends Component {
         if (!this.props.gitGist) {
             throw new Error('No gist data.');
         }
+        logger.log(this.props.gitGist);
     }
 
     render() {
