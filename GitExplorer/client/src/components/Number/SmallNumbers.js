@@ -64,42 +64,42 @@ class SmallNumbers extends Component {
                 <div className='col-sm-8'>
                     <Jumbotron>
                         <h2>Small Numbers</h2>
-                        <p className='App-intro'>
+                        <p>
                             state.nine: {this.state.nine}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.eight: {this.state.eight}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.seven: {this.state.seven}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.six: {this.state.six}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.five: {this.state.five}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.four: {this.state.four}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.three: {this.state.three}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.two: {this.state.two}
                         </p>
-                        <p className='App-intro'>
+                        <p>
                             state.one: {this.state.one}
                         </p>
-                        <Button bsStyle='primary' className='getNine' onClick={this.getNine}>Get Nine</Button>
-                        <Button bsStyle='primary' className='getEight' onClick={this.getEight}>Get Eight</Button>
-                        <Button bsStyle='primary' className='getSeven' onClick={this.getSeven}>Get Seven</Button>
-                        <Button bsStyle='primary' className='getSix' onClick={this.getSix}>Get Six</Button>
-                        <Button bsStyle='primary' className='getFive' onClick={this.getFive}>Get Five</Button>
-                        <Button bsStyle='primary' className='getFour' onClick={this.getFour}>Get Four</Button>
-                        <Button bsStyle='primary' className='getThree' onClick={this.getThree}>Get Three</Button>
-                        <Button bsStyle='primary' className='getTwo' onClick={this.getTwo}>Get Two</Button>
-                        <Button bsStyle='primary' className='getOne' onClick={this.getOne}>Get One</Button>
+                        <Button bsStyle='primary' id='getNine' onClick={this.getNine}>Get Nine</Button>
+                        <Button bsStyle='primary' id='getEight' onClick={this.getEight}>Get Eight</Button>
+                        <Button bsStyle='primary' id='getSeven' onClick={this.getSeven}>Get Seven</Button>
+                        <Button bsStyle='primary' id='getSix' onClick={this.getSix}>Get Six</Button>
+                        <Button bsStyle='primary' id='getFive' onClick={this.getFive}>Get Five</Button>
+                        <Button bsStyle='primary' id='getFour' onClick={this.getFour}>Get Four</Button>
+                        <Button bsStyle='primary' id='getThree' onClick={this.getThree}>Get Three</Button>
+                        <Button bsStyle='primary' id='getTwo' onClick={this.getTwo}>Get Two</Button>
+                        <Button bsStyle='primary' id='getOne' onClick={this.getOne}>Get One</Button>
                     </Jumbotron>
                 </div>
                 <div className='panel panel-info col-sm-4'>
