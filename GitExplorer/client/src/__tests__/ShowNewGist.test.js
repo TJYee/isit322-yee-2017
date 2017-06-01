@@ -82,8 +82,8 @@ describe('My ShowNewGist test suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('responds to a button click', () => {
-        //create variable to track button click status
+    it('responds to a Button click', () => {
+        //create variable to track Button click status
         let clicked = false;
         //create function to assign as onClick
         const callback = () => {
@@ -94,7 +94,7 @@ describe('My ShowNewGist test suite', () => {
             gitGist={bodyData}
             onChange={callback}
         />);
-        wrapper.find('button#getGist').simulate('click');
+        wrapper.find('Button#getGist').simulate('click');
         expect(clicked).toEqual(true);
     });
 });

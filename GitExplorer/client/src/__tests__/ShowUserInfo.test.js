@@ -4,7 +4,7 @@ import ShowUserInfo from '../components/Git/ShowUserInfo';
 import {mount} from 'enzyme';
 import fieldDefinitions from '../components/Init/field-definitions';
 import ElfDebugEnzyme from '../components/Debug/ElfDebugEnzyme';
-const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ShowUserInfo.test.js');
+const elfDebugEnzyme = new ElfDebugEnzyme(true, 'ShowUserInfo.test.js');
 
 describe('My ShowUserInfo test suite', () => {
     let bodyData = {};
@@ -391,8 +391,8 @@ describe('My ShowUserInfo test suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('responds to a button click', () => {
-        //create variable to track button click status
+    it('responds to a Button click', () => {
+        //create variable to track Button click status
         let clicked = false;
         //create function to assign as onClick
         const callback = () => {
@@ -404,6 +404,7 @@ describe('My ShowUserInfo test suite', () => {
             gitUser={bodyData}
             onChange={callback}
         />);
+        elfDebugEnzyme.getElement(wrapper, 'Button');
         wrapper.find('button#getUser').simulate('click');
         expect(clicked).toEqual(true);
     });

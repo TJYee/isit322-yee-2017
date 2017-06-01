@@ -32,7 +32,7 @@ describe('My Home test suite', () => {
     it('renders and reads second p element', () => {
         const wrapper = shallow(<Home />);
         const sign = <p>Please note that an environment variable of "GHTOKEN" needs to be defined as a GitHub Token with
-            Gist permissions.</p>;
+            Gist permissions in the "server" API.</p>;
         elfDebugEnzyme.getLast(wrapper, 'p');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });

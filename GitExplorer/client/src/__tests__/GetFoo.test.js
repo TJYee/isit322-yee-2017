@@ -15,10 +15,10 @@ describe('My GetFoo test suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders button click message for foo', () => {
+    it('renders Button click message for foo', () => {
         const wrapper = shallow(<GetFoo />);
         const sign = <p>state.foo: bar</p>;
-        wrapper.find('button#getFoo').simulate('click');
+        wrapper.find('Button#getFoo').simulate('click');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
@@ -28,10 +28,10 @@ describe('My GetFoo test suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('renders button click message for file', () => {
+    it('renders Button click message for file', () => {
         const wrapper = shallow(<GetFoo />);
         const sign = <p>state.file: getFoo.js</p>;
-        wrapper.find('button#getFoo').simulate('click');
+        wrapper.find('Button#getFoo').simulate('click');
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 });

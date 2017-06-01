@@ -172,8 +172,8 @@ describe('Gist Lister Suite', () => {
         expect(wrapper.containsMatchingElement(sign)).toEqual(true);
     });
 
-    it('gistLister button responds to button click', () => {
-        //create variable to track button click status
+    it('gistLister Button responds to Button click', () => {
+        //create variable to track Button click status
         let clicked = false;
         //create function to assign as onClick
         const callback = () => {
