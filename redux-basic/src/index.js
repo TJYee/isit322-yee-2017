@@ -5,6 +5,7 @@ import FakeRedux from "./FakeRedux";
 import AppNoProps from './AppNoProps';
 import DispatchConnect from './DispatchConnect';
 import AppConnect from './AppConnect';
+import AppConnectMaps from './AppConnectMaps';
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 import spokesman from "./spokesman";
@@ -17,14 +18,21 @@ ReactDOM.render(
     <div>
         <Provider store={store}>
             <div>
-                <App store={store} />
-                <hr /><hr />
+                <App store={store}/>
+                <hr />
+                <hr />
                 <AppNoProps />
-                <hr /><hr />
+                <hr />
+                <hr />
                 <DispatchConnect />
-                <hr /><hr />
+                <hr />
+                <hr />
                 <AppConnect />
-                <hr /><hr />
+                <hr />
+                <hr />
+                <AppConnectMaps />
+                <hr />
+                <hr />
                 <FakeRedux/>
             </div>
         </Provider>
