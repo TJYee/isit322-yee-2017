@@ -41,18 +41,18 @@ class DataMaven extends Component {
         for (let value of fieldDefinitions) {
             tempGitUser[value.id] = value.sample;
         }
-        
+
         this.state = {
             gitUser: tempGitUser,
             gitGist: tempGitGist,
             gitGistCanIterate: false,
             gitGistList: tempGitGistList
         };
-        
+
         logger.log('DataMaven constructor called.');
         logger.log(fieldDefinitions);
     }
-    
+
     fetchUser = (event) => {
         const that = this;
         fetch('/gitapi/user')
@@ -70,7 +70,7 @@ class DataMaven extends Component {
         });
         event.preventDefault();
     };
-    
+
     fetchGist = (event) => {
         const that = this;
         fetch('/gitapi/gist/gist-create')
@@ -87,7 +87,7 @@ class DataMaven extends Component {
         });
         event.preventDefault();
     };
-    
+
     fetchGistList = (event) => {
         const that = this;
         fetch('/gitapi/gist/get-basic-list')
@@ -105,7 +105,7 @@ class DataMaven extends Component {
         });
         event.preventDefault();
     };
-    
+
     render() {
         return (
             <Router>
