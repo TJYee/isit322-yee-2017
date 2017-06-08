@@ -7,7 +7,7 @@ router.use('/gist', require('./gist'));
 router.use('/user', require('./user'));
 
 router.get('/', (req, res) => {
-    res.status(200).send('OK');
+    res.status(200).send('OK from gitapi');
 });
 
 module.exports = router;

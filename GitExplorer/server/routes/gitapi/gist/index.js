@@ -7,7 +7,7 @@ router.use('/gist-create', require('./create'));
 router.use('/get-basic-list', require('./list'));
 
 router.get('/', (req, res) => {
-    res.status(200).send('OK');
+    res.status(200).send('OK from gist');
 });
 
 module.exports = router;
