@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var gitApi = require('./routes/gitapi');
+//var gitApi = require('./routes/gitapi');
 // Notice how there is no /index. Because that is the file it looks for when pointing at a folder
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/gitapi', gitApi);
+//app.use('/gitapi', gitApi);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
