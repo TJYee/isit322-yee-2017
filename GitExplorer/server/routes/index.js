@@ -16,4 +16,11 @@ router.get('/', function(req, res, next) {
     res.status(200).sendFile('index.html');
 });
 
+router.get('/:id', function(request, response) {
+    response.send({
+        'result': 'success from 30026',
+        'path': request.params.id
+    });
+});
+
 module.exports = router;
