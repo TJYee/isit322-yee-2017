@@ -19,6 +19,9 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.0.0",
+    "eslint-plugin-react": "^7.1.0",
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-jade": "^1.0.0",
