@@ -23,6 +23,10 @@ router.get('/git-user', function (req, res, next) {
     requester('http://localhost:30032').pipe(res);
 });
 
+router.get('/gitapi/user', function (req, res, next) {
+    requester('http://localhost:30032/user').pipe(res);
+});
+
 // markdown Calls
 router.get('/markdown', function (req, res, next) {
     requester('http://localhost:30033').pipe(res);
