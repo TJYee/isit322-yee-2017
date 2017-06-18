@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test-karma": "karma start",
-    "test": "REACT_APP_ELF_LOGGER='gist' node jasmine-runner.js",
+    "test": "REACT_APP_ELF_LOGGER='' node jasmine-runner.js",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
