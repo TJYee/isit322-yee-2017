@@ -53,9 +53,10 @@ class DataMaven extends Component {
         logger.log(fieldDefinitions);
     }
 
+    // Gets GitHub User Info
     fetchUser = (event) => {
         const that = this;
-        fetch('/gitapi/user')
+        fetch('/git-user/user')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -71,9 +72,10 @@ class DataMaven extends Component {
         event.preventDefault();
     };
 
+    // Creates new GitHub Gist
     fetchGist = (event) => {
         const that = this;
-        fetch('/gitapi/gist/gist-create')
+        fetch('/gist/create')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -88,9 +90,10 @@ class DataMaven extends Component {
         event.preventDefault();
     };
 
+    // Gets all of a GitHub user's Gists
     fetchGistList = (event) => {
         const that = this;
-        fetch('/gitapi/gist/get-basic-list')
+        fetch('/gist/list')
             .then(function (response) {
                 return response.json();
             }).then(function (json) {
