@@ -35,11 +35,6 @@ class ShowUserInfo extends Component {
                     <Jumbotron>
                         <form className='Form'>
                             <h2>Show Git User</h2>
-                            {
-                                this.props.fields.map((field, index) => {
-                                    return this.getForm(field, index)
-                                })
-                            }
                             <Button
                                 bsStyle='primary'
                                 id='getUser'
@@ -47,6 +42,11 @@ class ShowUserInfo extends Component {
                             >
                                 Get User
                             </Button>
+                            {
+                                this.props.fields.map((field, index) => {
+                                    return this.getForm(field, index)
+                                })
+                            }
                         </form>
                     </Jumbotron>
                 </div>

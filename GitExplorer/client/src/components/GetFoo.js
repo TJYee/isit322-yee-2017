@@ -36,12 +36,6 @@ class GetFoo extends Component {
                 <div className='col-sm-8'>
                     <Jumbotron>
                         <h2>Get Foo</h2>
-                        <p>
-                            state.foo: {this.state.foo}
-                        </p>
-                        <p>
-                            state.file: {this.state.file}
-                        </p>
                         <Button
                             bsStyle='primary'
                             id='getFoo'
@@ -49,6 +43,12 @@ class GetFoo extends Component {
                         >
                             Get Foo
                         </Button>
+                        <p>
+                            state.foo: {this.state.foo}
+                        </p>
+                        <p>
+                            state.file: {this.state.file}
+                        </p>
                     </Jumbotron>
                 </div>
                 <div className='panel panel-info col-sm-4'>

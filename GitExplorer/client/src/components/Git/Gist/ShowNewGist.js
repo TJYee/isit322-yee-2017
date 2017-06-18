@@ -21,7 +21,14 @@ class ShowNewGist extends Component {
                 <div className='col-sm-8'>
                     <Jumbotron>
                         <h2>Insert New Gist</h2>
-
+                        <Button
+                            bsStyle='primary'
+                            id='getGist'
+                            onClick={this.props.onChange}
+                        >
+                            Get Gist
+                        </Button>
+                        <h6>Do not click on hyperlinks before button click returns data</h6>
                         <p>
                             created_at: {this.props.gitGist.created_at}
                         </p>
@@ -37,15 +44,6 @@ class ShowNewGist extends Component {
                         <p>
                             url: <a href={this.props.gitGist.url}>{this.props.gitGist.url}</a>
                         </p>
-
-                        <Button
-                            bsStyle='primary'
-                            id='getGist'
-                            onClick={this.props.onChange}
-                        >
-                            Get Gist
-                        </Button>
-                        <h6>Do not click on hyperlinks before button click returns data</h6>
                     </Jumbotron>
                 </div>
                 <div className='panel panel-info col-sm-4'>
