@@ -5,7 +5,7 @@ const getData = (url) => {
                 foo: 'bar',
                 file: 'getFoo.js'
             };
-        case '/gitapi/user':
+        case '/git-user/user':
             return {
                 error: {},
                 response: {},
@@ -15,7 +15,7 @@ const getData = (url) => {
                     url: 'https://test.test.test'
                 })
             };
-        case '/gitapi/gist/get-basic-list':
+        case '/gist/list':
             return {
                 result: [
                     {
