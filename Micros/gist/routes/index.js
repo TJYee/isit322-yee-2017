@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+router.use('/create', require('./create'));
+router.use('/list', require('./list'));
 router.use('/you-rang', require('./you-rang'));
 
 /* GET home page. */
