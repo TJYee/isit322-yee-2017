@@ -125,17 +125,17 @@ class DataMaven extends Component {
                                           fields={fieldDefinitions}
                                           onChange={this.fetchUser}/>
                         )}/>
-                        <Route path='/get-foo' component={GetFoo}/>
-                        <Route path='/get-numbers' render={(props) => (
+                        <Route exact path='/get-foo' component={GetFoo}/>
+                        <Route exact path='/get-numbers' render={(props) => (
                             <SmallNumbers {...props}
                                           numbers={numbersInit}/>
                         )}/>
-                        <Route path='/get-gist' render={(props) => (
+                        <Route exact path='/get-gist' render={(props) => (
                             <ShowNewGist {...props}
                                          gitGist={this.state.gitGist}
                                          onChange={this.fetchGist}/>
                         )}/>
-                        <Route path='/get-list' render={(props) => (
+                        <Route exact path='/get-list' render={(props) => (
                             <GistLister {...props}
                                         gitGistCanIterate={this.state.gitGistCanIterate}
                                         gitGistList={this.state.gitGistList}

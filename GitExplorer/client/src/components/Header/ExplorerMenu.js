@@ -19,8 +19,8 @@ class ExplorerMenu extends Component {
                         <LinkContainer to='/get-foo'><NavItem>Get Foo</NavItem></LinkContainer>
                         <LinkContainer to='/get-numbers'><NavItem>Numbers</NavItem></LinkContainer>
                         <NavDropdown title='Gists' id='basic-nav-gist'>
-                            <MenuItem href='/get-gist'>Insert New Gist</MenuItem>
-                            <MenuItem href='/get-list'>Gist Lister</MenuItem>
+                            <LinkContainer to='/get-gist'><MenuItem>Insert New Gist</MenuItem></LinkContainer>
+                            <LinkContainer to='/get-list'><MenuItem>Gist Lister</MenuItem></LinkContainer>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
