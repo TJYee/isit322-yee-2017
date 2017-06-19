@@ -10,7 +10,7 @@ class GetFoo extends Component {
         super();
         this.state = {
             file: 'Get Foo File will be placed here.',
-            foo: 'Waiting for server.',
+            foo: 'Waiting for server.'
         };
         logger.log('GetFoo constructor called.')
     };
