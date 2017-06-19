@@ -7,6 +7,7 @@ import ExplorerHeader from "./Header/ExplorerHeader";
 import Home from "./Home";
 import ShowUserInfo from "./Git/ShowUserInfo";
 import GetFoo from "./GetFoo";
+import YouRang from "./YouRang";
 import ShowNewGist from "./Git/Gist/ShowNewGist";
 import GistLister from "./Git/Gist/GistLister";
 import numbersInit from "./Init/numbers-data";
@@ -119,13 +120,14 @@ class DataMaven extends Component {
                     </div>
                     <div className='container-fluid'>
                         <Route exact path='/' component={Home}/>
+                        <Route exact path='/get-foo' component={GetFoo}/>
+                        <Route exact path='/you-rang' component={YouRang}/>
                         <Route exact path='/get-user' render={(props) => (
                             <ShowUserInfo {...props}
                                           gitUser={this.state.gitUser}
                                           fields={fieldDefinitions}
                                           onChange={this.fetchUser}/>
                         )}/>
-                        <Route exact path='/get-foo' component={GetFoo}/>
                         <Route exact path='/get-numbers' render={(props) => (
                             <SmallNumbers {...props}
                                           numbers={numbersInit}/>
