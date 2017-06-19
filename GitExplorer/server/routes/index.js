@@ -13,11 +13,11 @@ router.get('/gist', function (req, res, next) {
     requester('http://localhost:30030').pipe(res);
 });
 
-router.get('/gitapi/gist/gist-create', function (req, res, next) {
+router.get('/gist/create', function (req, res, next) {
     requester('http://localhost:30030/create').pipe(res);
 });
 
-router.get('/gitapi/gist/get-basic-list', function (req, res, next) {
+router.get('/gist/list', function (req, res, next) {
     requester('http://localhost:30030/list').pipe(res);
 });
 
@@ -39,7 +39,7 @@ router.get('/git-user', function (req, res, next) {
     requester('http://localhost:30032').pipe(res);
 });
 
-router.get('/gitapi/user', function (req, res, next) {
+router.get('/git-user/user', function (req, res, next) {
     requester('http://localhost:30032/user').pipe(res);
 });
 
