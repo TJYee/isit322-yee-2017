@@ -1,5 +1,6 @@
 /**
  * Created by charlie on 10/7/15.
+ * REQUIRES gist MICRO SERVICE TO BE RUNNING
  */
 
 let request = require('supertest');
@@ -18,7 +19,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('gets the basic gists list', function (done) {
         request(app)
-            .get('/gitapi/gist/get-basic-list')
+            .get('/gist/list')
             .expect(200)
             .expect('Content-Type', /json/)
             .end(function (err, res) {
@@ -31,7 +32,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('checks the gist response data exists', function (done) {
         request(app)
-            .get('/gitapi/gist/get-basic-list')
+            .get('/gist/list')
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(function (response) {
@@ -49,7 +50,7 @@ describe('Elvenware Gists Suite', function () {
     
     it('checks the gist response has four properties: htmlUrl, id, description, gitPullUrl', function (done) {
         request(app)
-            .get('/gitapi/gist/get-basic-list')
+            .get('/gist/list')
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(function (response) {
